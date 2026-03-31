@@ -324,7 +324,7 @@ Di seguito sono riportati i requisiti per la rappresentazione degli EAA all’in
 
 La Fonte Autentica:
 
-- PUÒ rendere disponibile il **Logo della Fonte Autentica** in due versioni, una versione compatta tramite il parametro organization_info.logo_uri parameter e una versione estesa tramite il parametro organization_info.logo_extended_uri. In particolare, la Fonte Autentica: 
+- PUÒ rendere disponibile il **Logo della Fonte Autentica** in due versioni, una versione compatta tramite il parametro organization_info.logo_uri parameter e una versione estesa tramite il parametro organization_info.logo_extended_uri. In particolare, la Fonte Autentica:
 
  - DEVE fornire il logo in uno dei seguenti formati: ``image/png``, ``image/svg+xml``, or ``image/webp``;
  - DEVE fornire il logo sia in versione positiva che negativa, se disponibile; 
