@@ -17,7 +17,7 @@
   - [Step 5 | Test in produzione](#step-5--test-in-produzione)
   - [Step 6 | Pianificazione rilascio EAA](#step-6--pianificazione-rilascio-eaa)
   - [Step 7 | Manutenzione e assistenza](#step-7--manutenzione-e-assistenza)
-- [File da compilare](#file-da-compilare)
+- [Modulo da compilare](#modulo-da-compilare)
 - [Appendice A – Casi d'uso](#appendice-a--casi-duso)
 - [Appendice B – Data Model](#appendice-b--data-model)
 - [Appendice C – Mappatura errori](#appendice-c--mappatura-errori)
@@ -375,7 +375,7 @@ Il referente dell'ambito sistemistico e il referente dell'ambito applicativo, co
 - **Garantire il supporto agli utenti** 
 Il referente per l'ambito assistenza ed almeno un canale di contatto dedicato agli utenti finali (es. indirizzo e-mail, numero telefonico, etc.), così come definito nella sezione `assistenza` del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa), devono sempre essere disponibili per gestire eventuali problemi relativi all'EAA, come ad esempio la segnalazione di dati errati o di errori nella fase di ottenimento dell'EAA da parte dell'utente.
 
-## File da compilare
+## Modulo da compilare
 
 
 Per assolvere a quanto previsto dallo Step 1, l‘Ente deve: 
@@ -436,7 +436,7 @@ L’obiettivo della sezione `casi_d_uso` è quello di supportare gli Enti nella 
 ---
 ## Appendice B – Data Model
 
-Questa appendice descrive le istruzioni di compilazione dell’array `dataset` in `e_service.response` (data model di risposta dell’e-service) nel file JSON [Progettazione caratteristiche EAA](progettazione-caratteristiche-eaa.json). Assicurati di aver letto quanto riportato nella sezione [File da compilare](#file-da-compilare) prima di proseguire. 
+Questa appendice descrive le istruzioni di compilazione dell’array `dataset` in `e_service.response` (data model di risposta dell’e-service) nel modulo JSON [Progettazione caratteristiche EAA](progettazione-caratteristiche-eaa.json). Assicurati di aver letto quanto riportato nella sezione [Modulo da compilare](#modulo-da-compilare) prima di proseguire. 
 
 **Obiettivo**
 
