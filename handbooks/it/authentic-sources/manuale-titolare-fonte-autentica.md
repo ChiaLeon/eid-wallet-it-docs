@@ -346,6 +346,7 @@ Questo step ha l'obiettivo di pianificare e gestire le attività di rilascio agl
 Per i dettagli implementativi, consultare le Specifiche Tecniche, in particolare:
 
 - [Brand Identity](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/brand-identity.html)
+
 In questo step, l'Ente interessato deve:
 ### **Pianificare il go-live**
 
@@ -362,6 +363,7 @@ Una volta resi disponibili agli utenti gli EAA prodotti con i propri dati, la Fo
 Per i dettagli implementativi, consultare le Specifiche Tecniche, in particolare:
 
 - [Assistenza utente](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/functionalities.html#assistenza-utente)
+
 In questo step, l'Ente interessato deve:
 ### **Garantire la gestione e manutenzione dell'e-service**
 
