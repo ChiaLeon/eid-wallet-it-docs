@@ -303,6 +303,7 @@ Per i dettagli implementativi, consultare le Specifiche Tecniche, in particolare
 
 - [e-Service PDND](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/e-service-pdnd.html)
 - [Signal Hub](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/signal-hub-endpoint.html)
+
 In questo step, l'Ente interessato deve:
 ### **Pubblicare l'e-service su PDND in produzione**
 
