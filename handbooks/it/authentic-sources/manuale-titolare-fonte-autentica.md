@@ -229,7 +229,7 @@ L'Ente interessato a personalizzare la resa grafica dell'EAA prodotto dai propri
 
 ### **Validare il modulo “Progettazione caratteristiche EAA**
 
-A conclusione delle azioni sopra elencate e per poter proseguire con gli step successivi, l’Ente deve
+A conclusione delle azioni sopra elencate e per poter proseguire con gli step successivi, l’Ente deve:
 - validare il modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa), compilato in tutte le sue parti, utilizzando la funzionalità “valida” visibile in testa al modulo, che permette di validare il JSON Schema di cui è composto il modulo, e la corretta compilazione di tutti i campi;
 - esportare il modulo compilato e validato in formato JSON. L'export del modulo in formato JSON è funzionale a quanto previsto nello Step 2.
 
