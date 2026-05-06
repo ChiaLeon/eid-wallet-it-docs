@@ -173,7 +173,7 @@ A scopo esemplificativo, di seguito sono riportati due esempi di rappresentazion
 
 A tal fine, l’Ente deve compilare la sezione "Data model" del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa) riportando gli attributi adeguatamente definiti e i relativi dettagli (es. tipologia, obbligatorietà, formato, lunghezza massima consentita, ordinamento, etc.). Per riferimenti e istruzioni di compilazione vedi [Appendice B](#appendice-b--data-model).
 
-Un'adeguata definizione del Data Model pone le basi per una corretta implementazione dell'e-service da pubblicare su PDND (vedi [Step 2](#step-2--pubblicazione-in-collaudo)) ma è altresì importante considerare e rispettare i seguenti requisiti tecnici: 
+Un'adeguata definizione del Data Model pone le basi per una corretta implementazione dell'e-service da pubblicare su PDND (vedi [](#step-2--pubblicazione-in-collaudo)) ma è altresì importante considerare e rispettare i seguenti requisiti tecnici: 
 
 - **Identificativo utente**: Qualora fosse necessario identificare l'utente, il Codice Fiscale (CF) rappresenta l'identificativo univoco da utilizzare per le chiamate all'e-service; 
 - **Completezza base di dati**: Ogni e-service pubblicato su PDND dovrà esporre un set di dati completo nel contenuto e negli attributi. È ammessa la pubblicazione di basi dati parziali relative a periodi temporali limitati.
@@ -225,13 +225,13 @@ A tal fine, l'Ente deve compilare la sezione "Assistenza" del modulo [Progettazi
 ### **Predisporre gli elementi necessari per la rappresentazione grafica dell'EAA**
 
 Il Sistema IT-Wallet consente ai Titolari di Fonte Autentica di contribuire alla resa grafica degli EAA prodotti a partire dai propri dati. La rappresentazione visiva di un EAA all’interno di un IT-Wallet può dipendere quindi, per specifici aspetti, da parametri definiti nelle Specifiche Tecniche, sezione [Focus sugli Attestati Elettronici di Attributi](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/functionalities.html#focus-sugli-attestati-elettronici-di-attributi). 
-L'Ente interessato a personalizzare la resa grafica dell'EAA prodotto dai propri dati deve trasmettere i propri materiali come documentazione allegata all'e-service su PDND (vedi [Step 2](#step-2--pubblicazione-in-collaudo)).
+L'Ente interessato a personalizzare la resa grafica dell'EAA prodotto dai propri dati deve trasmettere i propri materiali come documentazione allegata all'e-service su PDND (vedi [](#step-2--pubblicazione-in-collaudo)).
 
 ### **Validare il modulo “Progettazione caratteristiche EAA**
 
 A conclusione delle azioni sopra elencate e per poter proseguire con gli step successivi, l’Ente deve:
 - validare il modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa), compilato in tutte le sue parti, utilizzando la funzionalità “valida” visibile in testa al modulo, che permette di validare il JSON Schema di cui è composto il modulo, e la corretta compilazione di tutti i campi;
-- esportare il modulo compilato e validato in formato JSON. L'export del modulo in formato JSON è funzionale a quanto previsto nello Step 2.
+- esportare il modulo compilato e validato in formato JSON. L'export del modulo in formato JSON è funzionale a quanto previsto nello [Step 2](#step-2--pubblicazione-in-collaudo).
 
 ## Step 2 | Pubblicazione in collaudo
 
