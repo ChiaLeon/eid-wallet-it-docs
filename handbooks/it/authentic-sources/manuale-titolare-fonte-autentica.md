@@ -281,6 +281,7 @@ Per i dettagli implementativi, consultare le Specifiche Tecniche, in particolare
 
 - [Endpoint delle Fonti Autentiche](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/authentic-source-endpoint.html)
 - [Signal Hub](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/signal-hub-endpoint.html)
+
 In questo step, in caso di disponibilità da parte del Fornitore di Attestati Elettronici di Attributi, l'Ente interessato può: 
 ### **Eseguire i test in collaudo**
 
