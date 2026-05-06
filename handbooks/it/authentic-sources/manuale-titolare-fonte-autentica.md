@@ -459,7 +459,7 @@ Questa appendice descrive le istruzioni di compilazione della sezione "Mappatura
 
 L’obiettivo della sezione "Mappatura stati" è quello di supportare gli Enti nella definizione delle caratteristiche dell'e-service - e quindi del corrispettivo Attestato Elettronico di Attributi (EAA) - in termini di stati che potrebbero caratterizzare l’EAA nel corso del suo ciclo di vita.
 
-**Valori ammessi per `stato` e uso in OpenAPI.** Nel JSON di progettazione il campo `stato` di ogni elemento dell'array può assumere solo: **Valido**, **Non Valido**, **Sospeso**, **Scaduto**. Sul canale tecnico, il campo `status` dei dataset nell'OpenAPI Fonte Autentica (`OAS3-PDND-AS.yaml`) resta limitato a **VALID**, **INVALID**, **SUSPENDED**; per la correlazione con i metadati di scadenza vedi il paragrafo *Corrispondenza con l'API Fonte Autentica* in [Step 1 | Progettazione caratteristiche EAA](#step-1--progettazione-caratteristiche-eaa).
+**Valori ammessi per `stato` e uso in OpenAPI.** Il campo `stato` di ogni elemento dell'array può assumere solo: **Valido**, **Non Valido**, **Sospeso**, **Scaduto**. Sul canale tecnico, il campo `status` dei dataset nell'OpenAPI Fonte Autentica (`OAS3-PDND-AS.yaml`) resta limitato a **VALID**, **INVALID**, **SUSPENDED**; per la correlazione con i metadati di scadenza vedi il paragrafo *Corrispondenza con l'API Fonte Autentica* in [Step 1 | Progettazione caratteristiche EAA](#step-1--progettazione-caratteristiche-eaa).
 
 **Istruzioni di compilazione**
 
