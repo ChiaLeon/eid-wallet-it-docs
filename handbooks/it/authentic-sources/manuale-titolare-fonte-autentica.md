@@ -428,7 +428,7 @@ L’obiettivo della sezione "Data model" è quello di supportare gli Enti nella 
 
 **Istruzioni di compilazione**
 
-1. Associa a ciascun dato che si intende rende disponibile all’interno dell’EAA un "nome campo" tra quelli definiti nella "Lista nome campo" sottostante o, se necessario, creane uno nuovo assicurandoti che sia parlante e che descriva adeguatamente il dato. 
+1. Associa a ciascun dato che si intende rende disponibile all’interno dell’EAA un "nome campo" tra quelli definiti nella "Lista nome campo" sottostante o, se necessario, creane uno nuovo assicurandoti che sia parlante e che descriva adeguatamente il dato;
 2. Ordina i campi in modo da facilitare la leggibilità: inserisci per primi i dati anagrafici (nome, cognome, data di nascita, luogo di nascita, codice fiscale), poi i dati specifici dell'attestato.
 
 
@@ -463,9 +463,9 @@ L’obiettivo della sezione "Mappatura stati" è quello di supportare gli Enti n
 
 **Istruzioni di compilazione**
 
-1. Mappa la condizione di applicabilità di ciascuno stato relativamente all'attestato in analisi. 
-2. Descrivi l'azione necessaria per ripristinare lo stato di validità all’interno del campo "causa" (es. Chiedere la riemissione del documento presso uffici fisici / in digitale).  
-3. Definisci l'"azione utente" da condividere con l'utente (es. I tuoi dati sono stati aggiornati nella banca dati ANIS, scarica la nuova versione digitale del documento). Usa il campo "Note" per aggiungere ulteriori informazioni utili o una spiegazione del perché proponiamo all'utente di compiere un'azione specifica. 
+1. Mappa la condizione di applicabilità di ciascuno stato relativamente all'attestato in analisi;
+2. Descrivi l'azione necessaria per ripristinare lo stato di validità all’interno del campo "causa" (es. Chiedere la riemissione del documento presso uffici fisici / in digitale); 
+3. Definisci l'"azione utente" da condividere con l'utente (es. I tuoi dati sono stati aggiornati nella banca dati ANIS, scarica la nuova versione digitale del documento). Usa il campo "Note" per aggiungere ulteriori informazioni utili o una spiegazione del perché proponiamo all'utente di compiere un'azione specifica;
 4. Per approfondimenti: [Ciclo di Vita degli Attestati Elettronici](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/credential-revocation.html).
 
 
