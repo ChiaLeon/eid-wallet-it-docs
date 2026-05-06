@@ -428,7 +428,7 @@ L’obiettivo della sezione "Data model" è quello di supportare gli Enti nella 
 
 **Istruzioni di compilazione**
 
-1. Associa a ciascun dato che si intende rende disponibile all’interno dell’EAA un "nome campo" tra quelli definiti nella "Lista nome campo" sottostante o, se necessario, creane uno nuovo assicurandoti che sia parlante e che descriva adeguatamente il dato;
+1. Associa a ciascun dato che si intende rende disponibile all’interno dell’EAA un "nome campo", assicurandoti che sia parlante e che descriva adeguatamente il dato;
 2. Ordina i campi in modo da facilitare la leggibilità: inserisci per primi i dati anagrafici (nome, cognome, data di nascita, luogo di nascita, codice fiscale), poi i dati specifici dell'attestato.
 
 
