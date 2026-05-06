@@ -231,7 +231,7 @@ L'Ente interessato a personalizzare la resa grafica dell'EAA prodotto dai propri
 
 A conclusione delle azioni sopra elencate e per poter proseguire con gli step successivi, l’Ente deve
 - validare il modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa) compilato in tutte le sue parti utilizzando la funzionalità “valida” visibile in testa al modulo, che permette di validare il JSON Schema di cui è composto il modulo, e la corretta compilazione di tutti i campi;
-- esportare il modulo compilato e validato in formato JSON, al fine di poterlo trasmettere secondo quanto definito nello Step 2.
+- esportare il modulo compilato e validato in formato JSON. L'export del modulo in formato JSON è funzionale a quanto previsto nello Step 2.
 
 ## Step 2 | Pubblicazione in collaudo
 
@@ -255,7 +255,7 @@ L'Ente deve sviluppare e rilasciare in collaudo un e-service coerente con il Dat
 - [sezione e-service del Manuale Operativo PDND Interoperabilità](https://docs.pagopa.it/interoperabilita-1/manuale-operativo/e-service)
 - [sezione Titolare di Fonte Autentica delle Specifiche Tecniche](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/authentic-sources.html)
 
-Contestualmente al flusso di pubblicazione dell'e-service, l'Ente deve allegare, come documentazione aggiuntiva su PDND, il modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa) precedentemente compilato in tutte le sue parti, validato ed esportato in formato JSON. 
+Contestualmente al flusso di pubblicazione dell'e-service, l'Ente deve allegare, come documentazione aggiuntiva su PDND, il modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa) precedentemente compilato in tutte le sue parti, validato ed esportato in formato JSON.
 
 Nel caso di EAA di interesse pubblico, l'Ente deve aggiungere l'attributo certificato Istituto Poligrafico e Zecca dello Stato S.P.A. all'e-service erogato, se possibile impostando l'accettazione automatica delle richieste di fruizione.
 
@@ -263,7 +263,7 @@ Si consiglia di nominare l'e-service in "Creazione EAA [Nome / Nome tipologia EA
 
 ### **Attivare il servizio Signal Hub in collaudo**
 
-L'Ente deve attivare in collaudo il servizio [Signal Hub](https://developer.pagopa.it/pdnd-interoperabilita/guides/manuale-operativo-pdnd-interoperabilita/v1.0/riferimenti-tecnici/signal-hub) di PDND per il relativo e-service, in coerenza con quanto definito dalle [Specifiche Tecniche](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/signal-hub-endpoint.html) per la gestione degli stati, precedentemente mappati nella sezione `mappatura_stati` del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa).
+L'Ente deve attivare in collaudo il servizio [Signal Hub](https://developer.pagopa.it/pdnd-interoperabilita/guides/manuale-operativo-pdnd-interoperabilita/v1.0/riferimenti-tecnici/signal-hub) di PDND per il relativo e-service, in coerenza con quanto definito dalle [Specifiche Tecniche](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/signal-hub-endpoint.html) per la gestione degli stati, precedentemente mappati nella sezione "Mappatura stati" del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa).
 
 ### **Sviluppare il Credential Offer (opzionale)**
 
@@ -309,7 +309,7 @@ L'Ente deve rilasciare l'e-service su PDND in produzione. Nel caso di EAA di int
 
 ### **Attivare il servizio Signal Hub in produzione**
 
-L'Ente deve attivare in produzione il servizio Signal Hub di PDND per il relativo e-service, in coerenza con quanto definito dalle [Specifiche Tecniche](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/signal-hub-endpoint.html) per la gestione degli stati, precedentemente mappati nella sezione `mappatura_stati` del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa).
+L'Ente deve attivare in produzione il servizio Signal Hub di PDND per il relativo e-service, in coerenza con quanto definito dalle [Specifiche Tecniche](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/signal-hub-endpoint.html) per la gestione degli stati, precedentemente mappati nella sezione "Mappatura stati" del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa).
 
 ### **Portare in produzione il Credential Offer (opzionale)**
 
@@ -368,12 +368,12 @@ L'Ente deve garantire il corretto funzionamento dell'e-service nel tempo, progra
 
 ### **Gestire problematiche e fornire assistenza agli utenti**
 
-L'Ente deve garantire un costante aggiornamento delle informazioni riportate delle informazioni riportate nella sezione `assistenza` del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa) al fine di:
+L'Ente deve garantire un costante aggiornamento delle informazioni riportate delle informazioni riportate nella sezione "Assistenza" del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa) al fine di:
 
 - **Contribuire alla risoluzione di bug** 
-Il referente dell'ambito sistemistico e il referente dell'ambito applicativo, così come definito nella sezione `assistenza.referenti` del template, devono contribuire alla diagnosi congiunta delle segnalazioni ricevute da Fornitore di Attestati Elettronici di Attributi (IPZS, nel caso di EAA di interesse pubblico) e Fornitori di Wallet (PagoPA, nel caso della soluzione pubblica IT-Wallet) e relativa risoluzione, secondo quanto definito dal [modello di assistenza](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/functionalities.html#assistenza-utente) del Sistema IT-Wallet. 
+Il referente dell'ambito sistemistico e il referente dell'ambito applicativo, così come definito nella sezione "Assistenza" del modulo, devono contribuire alla diagnosi congiunta delle segnalazioni ricevute da Fornitore di Attestati Elettronici di Attributi (IPZS, nel caso di EAA di interesse pubblico) e Fornitori di Wallet (PagoPA, nel caso della soluzione pubblica IT-Wallet) e relativa risoluzione, secondo quanto definito dal [modello di assistenza](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/functionalities.html#assistenza-utente) del Sistema IT-Wallet. 
 - **Garantire il supporto agli utenti** 
-Il referente per l'ambito assistenza ed almeno un canale di contatto dedicato agli utenti finali (es. indirizzo e-mail, numero telefonico, etc.), così come definito nella sezione `assistenza` del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa), devono sempre essere disponibili per gestire eventuali problemi relativi all'EAA, come ad esempio la segnalazione di dati errati o di errori nella fase di ottenimento dell'EAA da parte dell'utente.
+Il referente per l'ambito assistenza ed almeno un canale di contatto dedicato agli utenti finali (es. indirizzo e-mail, numero telefonico, etc.), così come definito nella sezione "Assistenza" del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa), devono sempre essere disponibili per gestire eventuali problemi relativi all'EAA, come ad esempio la segnalazione di dati errati o di errori nella fase di ottenimento dell'EAA da parte dell'utente.
 
 ## Modulo da compilare
 
