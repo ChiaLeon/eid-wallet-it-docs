@@ -220,7 +220,7 @@ Per ottimizzare l'esperienza d'uso dell'IT-Wallet pubblico, il Titolare di Fonte
 ### **Definire i contenuti per l'informazione e l'assistenza all'utente**
 
 L'Ente deve contribuire al [modello di assistenza](https://italia.github.io/eid-wallet-it-docs/versione-corrente/it/functionalities.html#assistenza-utente) del Sistema IT-Wallet rendendo disponibili contenuti utili alla predisposizione di nuove Domande Frequenti e/o testi informativi in app, e fornendo i recapiti necessari per la gestione dell'assistenza agli utenti.  
-A tal fine, l'Ente deve compilare la sezione "Assistenza" del modulo [Progettazione caratteristiche EAA]((https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa). Per riferimenti e istruzioni di compilazione vedi [Appendice E](#appendice-e--assistenza).
+A tal fine, l'Ente deve compilare la sezione "Assistenza" del modulo [Progettazione caratteristiche EAA](https://italia.github.io/eid-wallet-it-forms/form.html?webform=authentic-sources-eaa). Per riferimenti e istruzioni di compilazione vedi [Appendice E](#appendice-e--assistenza).
 
 ### **Predisporre gli elementi necessari per la rappresentazione grafica dell'EAA**
 
