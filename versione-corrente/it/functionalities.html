@@ -5,131 +5,267 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Design dell&#39;Esperienza Utente &#8212; IT-Wallet Specifiche Tecniche - Versione Corrente</title>
+    <title>5. Design dell&#39;Esperienza Utente &#8212; Specifiche Tecniche IT-Wallet</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
-    <link rel="stylesheet" type="text/css" href="_static/itwallet-override.css?v=63798874" />
-    <script src="_static/documentation_options.js?v=3fd72285"></script>
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs.css?v=adaf4dc5" />
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs-fonts.css?v=5c444340" />
+    <link rel="stylesheet" type="text/css" href="_static/shared-ui/css/bootstrap-italia.min.css?v=b319c0cd" />
+    <link rel="stylesheet" type="text/css" href="_static/shared-ui/css/ita.min.css?v=db8a8e6d" />
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs-overrides.css?v=1137af0e" />
+
+    <script src="_static/documentation_options.js?v=af8558f3"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=da26b4cc"></script>
-    <script src="_static/js/theme.js"></script>
-    <script src="_static/js/petite-vue.js"></script>
+<script src="_static/shared-ui/js/jquery-3.7.0.min.js"></script>
+<script src="_static/shared-ui/js/ita.min.js"></script>
+<script src="_static/shared-ui/js/bootstrap-italia.bundle.min.js"></script>
+<script src="_static/js/eid-wallet-docs.js"></script>
     <link rel="icon" href="https://avatars.githubusercontent.com/u/15377824?s=48&amp;v=4"/>
     <link rel="index" title="Indice" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
     <link rel="next" title="6. L&#39;Infrastruttura di Trust" href="trust-infrastructure.html" />
-    <link rel="prev" title="4. Sistema di Onboarding" href="onboarding-high-level.html" /> 
-  </head><body data-dark_mode_code_blocks="true">
-
-<div id="top_nav">
-    
-
-    <nav>
-        
-            
-        
-
-        <p id="toggle_sidebar">
-            <a href="#" title="Toggle sidebar">|||</a>
-        </p>
-        <h1><a href="index.html" title="Go to homepage">IT-Wallet Specifiche Tecniche - Versione Corrente</a></h1>
-            <a id="source_link" href="https://github.com/italia/eudi-wallet-it-docs">
-    
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-            <path fill="white" d="M 244.8,8 C 106.1,8 0,113.3 0,252 c 0,110.9 69.8,205.8 169.5,239.2 12.8,2.3 17.3,-5.6 17.3,-12.1 0,-6.2 -0.3,-40.4 -0.3,-61.4 0,0 -70,15 -84.7,-29.8 0,0 -11.4,-29.1 -27.8,-36.6 0,0 -22.9,-15.7 1.6,-15.4 0,0 24.9,2 38.6,25.8 21.9,38.6 58.6,27.5 72.9,20.9 2.3,-16 8.8,-27.1 16,-33.7 -55.9,-6.2 -112.3,-14.3 -112.3,-110.5 0,-27.5 7.6,-41.3 23.6,-58.9 -2.6,-6.5 -11.1,-33.3 2.6,-67.9 20.9,-6.5 69,27 69,27 20,-5.6 41.5,-8.5 62.8,-8.5 21.3,0 42.8,2.9 62.8,8.5 0,0 48.1,-33.6 69,-27 13.7,34.7 5.2,61.4 2.6,67.9 16,17.7 25.8,31.5 25.8,58.9 0,96.5 -58.9,104.2 -114.8,110.5 9.2,7.9 17,22.9 17,46.4 0,33.7 -0.3,75.4 -0.3,83.6 0,6.5 4.6,14.4 17.3,12.1 C 428.2,457.8 496,362.9 496,252 496,113.3 383.5,8 244.8,8 Z"/>
-        </svg>
-    
-</a>
-        
-
-        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
-    <template v-if="mode == 'light'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-
-    <template v-if="mode == 'dark'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-
-    <template v-if="mode == 'darkest'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-</a>
-
-<script>
-(function() {
-    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
-
-    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
-
-    if (initialMode) {
-        // Make sure the value in local storage is valid
-        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
-            initialMode = 'light'
-            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+    <link rel="prev" title="4. Sistema di Onboarding" href="onboarding-high-level.html" />
+   
+  <meta name="description" content="Specifiche Tecniche IT-Wallet">
+  <script>
+    (function () {
+      try {
+        var mode = localStorage.getItem("it-docs-brightness");
+        if (mode && /^(light|middle|black)$/.test(mode)) {
+          document.documentElement.setAttribute("data-it-docs-brightness", mode);
         }
-    } else {
-        // Check if the client prefers dark mode
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            initialMode = 'dark'
-        } else {
-            initialMode = 'light'
+      } catch (error) {
+        /* ignore storage errors */
+      }try {
+        if (localStorage.getItem("it-docs-navscroll-collapsed") === "1") {
+          document.documentElement.classList.add("it-docs-navscroll-collapsed");
         }
-        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
-    }
+      } catch (error) {
+        /* ignore storage errors */
+      }})();
+  </script>
+  </head><body class="it-docs-body">
+<nav class="it-skip-links" aria-label="Skip links">
+  <a id="skip-main" class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
+  <a id="skip-footer" class="visually-hidden-focusable" href="#page-footer">Skip to footer</a>
+</nav>
 
-    document.documentElement.dataset.mode = initialMode
-
-    PetiteVue.createApp({
-        'mode': initialMode,
-        handleClick() {
-            let currentMode = this.mode
-
-            if (currentMode == 'light') {
-                this.mode = 'dark'
-            } else if (currentMode == 'dark') {
-                this.mode = 'darkest'
-            } else if (currentMode == 'darkest') {
-                this.mode = 'light'
-            }
-
-            document.documentElement.dataset.mode = this.mode
-            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
-
-            console.log(this.mode)
-        }
-    }).mount('#mode_toggle')
-})()
-</script>
-            <p class="mobile_search_link">
-                <a href="search.html" title="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
-                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
-                    </svg>
-                </a>
-            </p>
-        
-
-        <div class="searchbox_wrapper">
-            
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Ricerca veloce</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Vai" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<header class="it-header-wrapper it-docs-header" role="banner">
+  <div class="it-header-slim-wrapper bg-primary">
+    <div class="container">
+      <div class="it-header-slim-wrapper-content d-flex justify-content-between align-items-center">
+        <span class="navbar-brand text-white" id="header-region-name">
+          <strong>Dipartimento per la Trasformazione Digitale</strong>
+        </span>
+        <div class="it-header-slim-right-zone it-docs-slim-tools d-flex align-items-center"><div class="it-docs-searchbox--slim it-docs-searchbox" role="search">
+  <form class="it-docs-search-form" action="search.html" method="get">
+    <label class="visually-hidden" for="it-docs-search-input">Cerca</label>
+    <input id="it-docs-search-input"
+           class="form-control it-docs-search-input"
+           type="search"
+           name="q"
+           placeholder="Cerca"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false"
+           enterkeyhint="search"/>
+    <button class="btn it-docs-search-submit" type="submit" title="Cerca">
+      <svg class="icon it-docs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M21.9 21.1 16 15.3c1.3-1.5 2-3.4 2-5.3 0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8c1.9 0 3.8-.7 5.3-2l5.8 5.9.8-.8zM10 17c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+</svg>
+      <span class="visually-hidden">Cerca</span>
+    </button>
+  </form>
+</div><a id="source_link" class="it-docs-source-link" href="https://github.com/italia/eudi-wallet-it-docs" title="Source repository" target="_blank" rel="noopener">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.4-2.1.7-2.1-1.3-4.3-4.3-5.2-2.6-.7-5.5.3-6.4 2.1zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5 21.3 0 42.8 2.9 62.8 8.5 0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/>
+  </svg>
+  
+  <span class="visually-hidden">Source repository</span>
+</a><div class="nav-item dropdown it-docs-brightness-dropdown">
+  <button type="button"
+          id="it-docs-brightness-toggle"
+          class="it-docs-brightness-toggle nav-link dropdown-toggle"
+          aria-controls="it-docs-brightness-menu"
+          data-bs-toggle="dropdown"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          title="Content brightness">
+    <span id="it-docs-brightness-active-hint" class="visually-hidden">
+      Active brightness:
+    </span>
+    <svg class="icon it-docs-brightness-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M12 7.75a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zM10.5 1.25h3v4.75h-3V1.25zm0 17h3v4.75h-3V18.25zM1.25 10.5h4.75v3h-4.75v-3zm17 0h4.75v3H18.25v-3zM5.1 5.1h3.2v3.2H5.1V5.1zm10.7 0h3.2v3.2h-3.2V5.1zM5.1 15.7h3.2v3.2H5.1v-3.2zm10.7 0h3.2v3.2h-3.2v-3.2z"/>
+</svg>
+    <span class="visually-hidden" id="it-docs-brightness-current-label">Light</span>
+    <svg class="icon ms-1 it-docs-brightness-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+  </button>
+  <div id="it-docs-brightness-menu" class="dropdown-menu dropdown-menu-end">
+    <div class="row">
+      <div class="col-12">
+        <div class="link-list-wrapper">
+          <ul class="link-list" role="menu" aria-labelledby="it-docs-brightness-toggle">
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option active"
+                      data-it-docs-brightness="light"
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span>Light</span>
+              </button>
+            </li>
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option"
+                      data-it-docs-brightness="middle"
+                      role="menuitemradio"
+                      aria-checked="false">
+                <span>Middle</span>
+              </button>
+            </li>
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option"
+                      data-it-docs-brightness="black"
+                      role="menuitemradio"
+                      aria-checked="false">
+                <span>Black</span>
+              </button>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
 </div>
-
-    
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper"><p class="caption" role="heading"><span class="caption-text">Indice dei Contenuti</span></p>
+          <div class="nav-item dropdown it-header-lang-dropdown">
+            <button type="button"
+                    id="languagesDropButton"
+                    class="nav-link dropdown-toggle"
+                    aria-controls="language-menu"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="menu"
+                    aria-expanded="false">
+              <span id="header-lang-active-hint" class="visually-hidden">lingua attiva:</span>
+              <span class="it-header-lang-label" aria-hidden="true">ITA</span>
+              <svg class="icon icon-sm ms-1 it-header-lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+            </button>
+            <div id="language-menu" class="dropdown-menu dropdown-menu-end">
+              <div class="row">
+                <div class="col-12">
+                  <div class="link-list-wrapper">
+                    <ul class="link-list" role="menu" aria-labelledby="languagesDropButton">
+                      <li>
+                        <a class="dropdown-item list-item it-lang-option active"
+                           href="#"
+                           data-lang="it"
+                           role="menuitemradio"
+                           aria-checked="true"
+                           aria-current="true">
+                          <span lang="it">Italiano</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item list-item it-lang-option"
+                           href="../en/functionalities.html"
+                           data-lang="en"
+                           role="menuitemradio"
+                           aria-checked="false"
+                           >
+                          <span lang="en">English</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="it-header-center-content-wrapper it-docs-header-compact">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="it-header-center-content d-flex align-items-center justify-content-between flex-nowrap">
+            <div class="it-brand-wrapper it-docs-brand-wrapper">
+              <a href="index.html"
+                 class="it-docs-brand-link text-decoration-none"
+                 title="Home">
+                <h2 class="it-brand-title it-docs-header-site-title" id="header-site-title">Specifiche Tecniche IT-Wallet</h2>
+              </a>
+            </div>
+            <button class="custom-navbar-toggler d-lg-none it-docs-sidebar-toggler"
+                    type="button"
+                    data-it-docs-nav-toggle
+                    data-it-docs-nav-target="#itDocsPrimaryNav"
+                    aria-controls="itDocsPrimaryNav"
+                    aria-expanded="false"
+                    aria-label="Open navigation">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M22 5v1H2V5h20zM2 12.5h20v-1H2v1zM2 19h20v-1H2v1z"/>
+</svg>
+              <span>Menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container it-docs-header-mobile-tools-container d-lg-none">
+      <div class="it-docs-header-mobile-tools"><div class="it-docs-searchbox--mobile it-docs-searchbox" role="search">
+  <form class="it-docs-search-form" action="search.html" method="get">
+    <label class="visually-hidden" for="it-docs-search-input-mobile">Cerca</label>
+    <input id="it-docs-search-input-mobile"
+           class="form-control it-docs-search-input"
+           type="search"
+           name="q"
+           placeholder="Cerca"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false"
+           enterkeyhint="search"/>
+    <button class="btn it-docs-search-submit" type="submit" title="Cerca">
+      <svg class="icon it-docs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M21.9 21.1 16 15.3c1.3-1.5 2-3.4 2-5.3 0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8c1.9 0 3.8-.7 5.3-2l5.8 5.9.8-.8zM10 17c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+</svg>
+      <span class="visually-hidden">Cerca</span>
+    </button>
+  </form>
+</div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="it-docs-layout">
+  <div class="it-docs-container">
+    <div class="row it-docs-row">
+      <aside class="col-12 col-lg-3 it-docs-sidebar-col" aria-label="Primary navigation">
+        <div class="navbar-collapsable it-docs-primary-nav-collapsable" id="itDocsPrimaryNav">
+          <div class="overlay d-lg-none"></div>
+          <div class="close-div d-lg-none">
+            <button class="btn close-menu" type="button" aria-label="Close navigation">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m12.7 12 3.7 3.6-.8.8-3.6-3.7-3.6 3.7-.8-.8 3.7-3.6-3.7-3.6.8-.8 3.6 3.7 3.6-3.7.8.8-3.7 3.6z"/>
+</svg>
+            </button>
+          </div>
+          <div class="menu-wrapper it-docs-menu-scroll"><div class="sidebar-wrapper it-line-right-side it-docs-primary-nav">
+  <div class="sidebar-linklist-wrapper">
+    <div class="link-list-wrapper">
+      <h2 class="it-docs-nav-section-label">Indice dei contenuti</h2>
+      
+      <div class="it-docs-sphinx-toc">
+        <p class="caption" role="heading"><span class="caption-text">Indice dei Contenuti</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduzione</a></li>
 <li class="toctree-l1"><a class="reference internal" href="brand-identity.html">2. Brand Identity</a></li>
@@ -153,14 +289,22 @@
 <li class="toctree-l1"><a class="reference internal" href="appendix.html">20. Appendice</a></li>
 </ul>
 
-        </div>
       </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+      </aside>
 
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+      <div class="col-12 col-lg-6 it-docs-main-col">
+        <main id="main-content" class="it-docs-main it-page-sections-container" role="main" tabindex="-1">
+          <noscript>
+            <p class="it-docs-noscript alert alert-warning" role="alert">
+              JavaScript is required for navigation menus and some interactive features.
+            </p>
+          </noscript>
+          <div class="body">
             
   <section id="design-dell-esperienza-utente">
 <h1><span class="section-number">5. </span>Design dell'Esperienza Utente<a class="headerlink" href="#design-dell-esperienza-utente" title="Link to this heading">¶</a></h1>
@@ -185,13 +329,13 @@
 </figcaption>
 </figure>
 <p>Le sezioni a seguire si focalizzano sulle macro-fasi di utilizzo e post-utilizzo. Esse definiscono i requisiti funzionali a supporto dell'Esperienza Utente relativi alle fasi di attivazione ottenimento, presentazione, gestione e disattivazione, unitamente ai requisiti di interazione con il servizio in termini di gestione degli errori, richiesta di assistenza e raccolta feedback.</p>
-<p>La documentazione e le risorse aggiuntive saranno rese disponibili nella sezione <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
+<p>La documentazione e le risorse aggiuntive sono disponibili nella sezione <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
 <p>Le Risorse Ufficiali descrivono le modalità di interazione Utente-Istanza del Wallet e le buone pratiche di progettazione al fine di promuovere coerenza tra le diverse Soluzioni Wallet, in termini di modalità di fruizione delle funzionalità.</p>
 <p>Per garantire un’implementazione corretta e coerente, gli Attori Primari:</p>
 <ul class="simple">
-<li><p>DEVONO utilizzare esclusivamente le Risorse Ufficiali e DEVONO rispettare le tutte le relative specifiche di utilizzo fornite;</p></li>
-<li><p>POSSONO scegliere quale configurazione implementare, tra quelle rese disponibili, ma DEVONO comunque garantire il corretto utilizzo dei componenti atomici come l'Engagement Button;</p></li>
-<li><p>DEVONO garantire il costante aggiornamento delle risorse utilizzate, in linea con l'ultima versione resa disponibile.</p></li>
+<li><p>DEVONO utilizzare esclusivamente le <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a> e DEVONO rispettare tutte le relative specifiche di utilizzo fornite;</p></li>
+<li><p>POSSONO scegliere quale configurazione implementare, tra quelle rese disponibili, ma DEVONO comunque garantire il corretto utilizzo dei componenti atomici come l'<a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a> o l'<a class="reference internal" href="#authentication-button"><span class="std std-ref">Authentication Button</span></a>;</p></li>
+<li><p>DEVONO garantire il costante aggiornamento delle risorse utilizzate, in linea con l'ultima versione delle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a> resa disponibile.</p></li>
 </ul>
 </section>
 <section id="attivazione-dell-istanza-del-wallet">
@@ -219,12 +363,12 @@
 </figure>
 <section id="focus-sul-pid-dati-di-identificazione-della-persona">
 <h3><span class="section-number">5.3.1. </span>Focus sul PID – Dati di Identificazione della Persona<a class="headerlink" href="#focus-sul-pid-dati-di-identificazione-della-persona" title="Link to this heading">¶</a></h3>
-<p>Il PID (Person Identification Data) si riferisce a un set minimo verificato di informazioni sull'identità dell'Utente (vedere <a class="reference internal" href="credential-data-model.html#modello-di-dati-degli-attestati-elettronici"><span class="std std-ref">Modello di Dati degli Attestati Elettronici</span></a>) emesso come risultato del processo di attivazione e reso disponibile nell'Istanza del Wallet.
-Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una visualizzazione e un utilizzo del PID uniforme e coerente. Il Fornitore di Wallet:</p>
+<p>Il PID (Person Identification Data) si riferisce a un set minimo verificato di informazioni sull'identità dell'Utente (vedere <a class="reference internal" href="credential-data-model.html#modello-di-dati-degli-attestati-elettronici"><span class="std std-ref">Modello di Dati degli Attestati Elettronici</span></a>) emesso come risultato del processo di attivazione e reso disponibile nell'Istanza del Wallet.</p>
+<p>Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una visualizzazione e un utilizzo del PID uniforme e coerente. Il Fornitore di Wallet:</p>
 <ul class="simple">
 <li><p>DEVE mostrare il PID correttamente su tutti i dispositivi, garantendo un'esperienza coerente su schermi di dimensioni diverse;</p></li>
 <li><p>DEVE mostrare lo stato del PID, se diverso da valido, per fornire trasparenza sul suo ciclo di vita, e PUÒ visualizzarlo se valido. Dettagli specifici sullo stato del PID, se non valido, POSSONO essere forniti (ad esempio, il motivo per cui il PID è stato revocato);</p></li>
-<li><p>DEVE includere uno o più Engagement Buttons per consentire la gestione del ciclo di vita del PID e permettere all'Utente di revocare il PID, quindi l'intera Istanza del Wallet con tutte le EAA emesse, o di aggiornare il PID in qualsiasi momento  (vedere <a class="reference internal" href="#gestione-degli-attestati-elettronici"><span class="std std-ref">Gestione degli Attestati Elettronici</span></a>);</p></li>
+<li><p>DEVE includere Action Button per consentire la gestione del ciclo di vita del PID e permettere all'Utente di revocare il PID, quindi l'intera Istanza del Wallet con tutte le EAA emesse, o di aggiornare il PID in qualsiasi momento  (vedere <a class="reference internal" href="#gestione-degli-attestati-elettronici"><span class="std std-ref">Gestione degli Attestati Elettronici</span></a>);</p></li>
 <li><p>DEVE garantire che il PID sia un elemento dispositivo, affinché l'Utente lo possa usare per autenticarsi presso un Relying Party in un contesto digitale (vedere <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>), per accedere ai servizi in contesti di prossimità e per richiedere l'emissione di ulteriori EAA (vedere <a class="reference internal" href="#ottenimento-degli-attestati-elettronici-di-attributi"><span class="std std-ref">Ottenimento degli Attestati Elettronici di Attributi</span></a>);</p></li>
 <li><p>DEVE mostrare un metodo di assistenza reso disponibile da parte del Fornitore PID (vedere <a class="reference internal" href="#assistenza-utente"><span class="std std-ref">Assistenza Utente</span></a>);</p></li>
 <li><p>DEVE garantire che il PID sia riconoscibile dall'Utente e distinguibile da altri EAA.</p></li>
@@ -260,7 +404,7 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <p>A seconda delle specifiche esigenze dell'Utente, della tipologia di Attestato Elettronico di Attributi e delle disponibilità offerte dal Fornitore di Wallet, dal Fornitore di Attestati Elettronici di Attributi e dalla Fonte Autentica, l'ottenimento degli Attestati Elettronici di Attributi può avvenire attraverso due modalità:</p>
 <ul class="simple">
 <li><p><strong>dal Catalogo dell'Istanza del Wallet</strong>: l'Utente esplora l'elenco degli Attestati Elettronici di Attributi forniti dalla Soluzione Wallet, seleziona quello di interesse e avvia il processo di richiesta, concludendo con il rilascio dell'Attestato Elettronico di Attributi nell'Istanza del Wallet. Questo percorso è disponibile per i tipi di credenziale idonei per la discovery pubblica come determinato dalle politiche dell'organismo di supervisione durante il processo di onboarding (vedere <a class="reference internal" href="registry.html#catalogo-degli-attestati-elettronici"><span class="std std-ref">Catalogo degli Attestati Elettronici</span></a>).</p></li>
-<li><p><strong>da un Touchpoint della Fonte Autentica</strong> (o del Fornitore di Attestati Elettronici di Attributi se coincide con la Fonte Autentica): l'Utente interagisce con il servizio digitale della Fonte Autentica, consentendogli di ottenere un Attestato Elettronico di Attributi specifico nella propria Istanza del Wallet tramite un Engagement Button.</p></li>
+<li><p><strong>da un Touchpoint della Fonte Autentica</strong> (o del Fornitore di Attestati Elettronici di Attributi se coincide con la Fonte Autentica; vedere <a class="reference internal" href="credential-issuance-low-level.html#flusso-credential-offer"><span class="std std-ref">Flusso Credential Offer</span></a>): l'Utente interagisce con il servizio digitale della Fonte Autentica, consentendogli di ottenere un Attestato Elettronico di Attributi specifico nella propria Istanza del Wallet tramite un <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>.</p></li>
 </ul>
 <p>Nonostante le modalità di avvio della richiesta siano diverse, i flussi di ottenimento condividono una struttura e un processo simili.</p>
 <section id="ottenimento-dal-catalogo-dell-istanza-del-wallet">
@@ -310,19 +454,18 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 </section>
 <section id="ottenimento-dal-touchpoint-della-fonte-autentica">
 <h3><span class="section-number">5.4.2. </span>Ottenimento dal Touchpoint della Fonte Autentica<a class="headerlink" href="#ottenimento-dal-touchpoint-della-fonte-autentica" title="Link to this heading">¶</a></h3>
-<p>Di seguito sono illustrati i requisiti dell'Esperienza Utente del flusso di ottenimento di un Attestato Elettronico di Attributi dal Touchpoint della Fonte Autentica che questa DEVE garantire attraverso il proprio Touchpoint:</p>
+<p>Di seguito sono illustrati i requisiti dell'Esperienza Utente del flusso di ottenimento di un Attestato Elettronico di Attributi dal Touchpoint della Fonte Autentica (chiamato anche <a class="reference internal" href="credential-issuance-low-level.html#flusso-credential-offer"><span class="std std-ref">Flusso Credential Offer</span></a>) che questa DEVE garantire attraverso il proprio Touchpoint:</p>
 <ul class="simple">
-<li><p>L’Utente interagisce con l'Engagement Button chiaramente esposto nell’interfaccia del Touchpoint;</p></li>
+<li><p>L’Utente interagisce con l'<a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a> chiaramente esposto nell’interfaccia del Touchpoint;</p></li>
 <li><p>L’Utente seleziona la Soluzione Wallet con la quale procedere, attraverso un’interfaccia che DEVE seguire le indicazioni e le funzionalità previste per la Selection Page descritta nella sezione <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>;</p></li>
-<li><p>(<em>solo cross-device</em>) L’Utente scansiona un QR code che invoca l’apertura dell’Istanza del Wallet prescelta, attraverso un’interfaccia che DEVE seguire le indicazioni e le funzionalità previste per la QR Code Page descritta nella sezione <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>;</p></li>
-<li><p>(<em>solo cross-device</em>) L’Utente visualizza un messaggio di invito a continuare sulla propria Istanza del Wallet, attraverso un’interfaccia che DEVE seguire le indicazioni e le funzionalità previste per la Waiting Page descritta nella sezione <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>;</p></li>
-<li><p>l'Utente accede alla propria Istanza del Wallet utilizzando la modalità di sblocco precedentemente impostata;</p></li>
-<li><p>L’Utente visualizza eventuali informazioni aggiuntive sui requisiti e/o limitazioni relative all’ottenimento dell’Attestato Elettronico di Attributi, provenienti dalla Fonte Autentica;</p></li>
-<li><p>l'Utente prende visione dei dati del PID, qualora richiesti dalla Fonte Autentica per l'ottenimento dell'Attestato Elettronico di Attributi, il nome del relativo Fornitore di Attestati Elettronici di Attributi e di eventuali informative. L'Utente dà il proprio consenso per poter proseguire presentando i dati del PID o altri Attributi al Fornitore di Attestati Elettronici di Attributi oppure annulla l'operazione;</p></li>
-<li><p>l'Utente visualizza l'anteprima dell'Attestato Elettronico di Attributi. L'Utente conferma i dati mostrati in anteprima per procedere all'ottenimento oppure annulla l'operazione;</p></li>
-<li><p>l'Utente autorizza l'operazione utilizzando la modalità di sblocco precedentemente impostata;</p></li>
-<li><p>l'Utente visualizza l'esito positivo dell'ottenimento avvenuto;</p></li>
-<li><p>l'Utente visualizza i dettagli dell'Attestato Elettronico di Attributi ottenuto ovvero: i dati in esso contenuti, il nome del Fornitore di Attestati Elettronici di Attributi che ha emesso l'Attestato Elettronico di Attributi e il nome della Fonte Autentica.</p></li>
+<li><p>(<em>solo cross-device</em>) L’Utente scansiona un QR code che invoca l’apertura dell’Istanza del Wallet prescelta, attraverso un’interfaccia che DEVE seguire le indicazioni e le funzionalità previste per la QR Code Page descritta nella sezione <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>; in alternativa l’Utente può uscire da flusso.</p></li>
+<li><p>L'Utente accede alla propria Istanza del Wallet utilizzando la modalità di sblocco precedentemente impostata;</p></li>
+<li><p>L'Utente prende visione dei dati del PID, qualora richiesti dalla Fonte Autentica per l'ottenimento dell'Attestato Elettronico di Attributi, il nome del relativo Fornitore di Attestati Elettronici di Attributi e di eventuali informative. L'Utente dà il proprio consenso per poter proseguire presentando i dati del PID o altri Attributi al Fornitore di Attestati Elettronici di Attributi oppure annulla l'operazione;</p></li>
+<li><p>L’Utente visualizza eventuali informazioni aggiuntive sui requisiti e/o limitazioni relative all’ottenimento dell’Attestato Elettronico di Attributi;</p></li>
+<li><p>L'Utente visualizza l'anteprima dell'Attestato Elettronico di Attributi. L'Utente conferma i dati mostrati in anteprima per procedere all'ottenimento oppure annulla l'operazione;</p></li>
+<li><p>L'Utente autorizza l'operazione utilizzando la modalità di sblocco precedentemente impostata;</p></li>
+<li><p>L'Utente visualizza l'esito positivo dell'ottenimento avvenuto;</p></li>
+<li><p>L'Utente visualizza i dettagli dell'Attestato Elettronico di Attributi ottenuto ovvero: i dati in esso contenuti, il nome del Fornitore di Attestati Elettronici di Attributi che ha emesso l'Attestato Elettronico di Attributi e il nome della Fonte Autentica.</p></li>
 </ul>
 <p>In caso di errori nell'ottenimento dell'Attestato Elettronico di Attributi, la Fonte Autentica DEVE garantire all'Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione <a class="reference internal" href="#gestione-degli-errori"><span class="std std-ref">Gestione degli errori</span></a>.</p>
 <p>Il flusso è rappresentato di seguito con wireframe esemplificativi.</p>
@@ -332,22 +475,58 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <p><span class="caption-number">Fig. 5.12 </span><span class="caption-text">Esempio di Esperienza Utente nell'Ottenimento di un Attestato Elettronico da Touchpoint della Fonte Autentica</span><a class="headerlink" href="#id107" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
+<p>Di seguito è rappresentata a titolo esemplificativo la pagina con l’<a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>, insieme alla Selection Page e alla QR Code Page con gli elementi dell’interfaccia e i testi adattati al flusso di <a class="reference internal" href="#ottenimento-dal-touchpoint-della-fonte-autentica"><span class="std std-ref">Ottenimento dal Touchpoint della Fonte Autentica</span></a>.</p>
+<figure class="align-center" id="id114">
+<a class="reference internal image-reference" href="_images/Credential-offer-ITA.svg"><img alt="Esempio di pagina con Engagement Button, Selection page e QR code page per il credential offer" src="_images/Credential-offer-ITA.svg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.19 </span><span class="caption-text">Esempio di pagina con Engagement Button, Selection page e QR code page per il credential offer</span><a class="headerlink" href="#id114" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<section id="engagement-button">
+<h4><span class="section-number">5.4.2.1. </span>Engagement Button<a class="headerlink" href="#engagement-button" title="Link to this heading">¶</a></h4>
+<p>L'Engagement Button è un elemento interattivo dell'interfaccia che consente all'Utente di avviare un processo, ad esempio di Autenticazione (“Entra con IT-Wallet&quot;), di ottenimento di un Attestato Elettronico (“Aggiungi a IT-Wallet”) o di verifica (“Verifica con IT-Wallet”).</p>
+<p>I Verificatori di Attestati Elettronici POSSONO rendere disponibile l'Engagement Button all'interno della pagina di un Touchpoint per permettere all'Utente di fruire dei servizi tramite un'Istanza del Wallet.</p>
+<p>L'Engagement Button:</p>
+<ul class="simple">
+<li><p>DEVE essere utilizzato esattamente come indicato nelle Risorse Ufficiali e NON DEVE essere riprogettato ad hoc;</p></li>
+<li><p>DEVE essere utilizzato esclusivamente nelle forme, colori e proporzioni stabilite e NON DEVE essere alterato, distorto o nascosto;</p></li>
+<li><p>DEVE adattarsi a tutte le risoluzioni di schermo e DEVE essere integrato nella Discovery Page in modo da garantire i requisiti minimi di usabilità e accessibilità;</p></li>
+<li><p>DEVE mantenere una distanza minima da altri elementi (quiet zone) di almeno 24px;</p></li>
+<li><p>DEVE riportare nella dicitura l’azione da svolgere seguita da “IT-Wallet”, ad esempio &quot;Entra con IT-Wallet&quot;, “Aggiungi a IT-Wallet”, “Verifica con IT-Wallet”);</p></li>
+<li><p>PUÒ essere accompagnato da un testo che spiega il valore aggiunto dal fare quell’azione usando il sistema IT-Wallet.</p></li>
+<li><p>Gli attori che intendono integrare l'Engagement Button nel proprio Touchpoint DEVONO garantirne la traduzione in altre lingue, almeno quella inglese;</p></li>
+</ul>
+<p>Di seguito alcuni esempi non normativi di dicitura dell'Engagement Button:
+- Entra con IT-Wallet / Login with IT-Wallet (vedere <a class="reference internal" href="#authentication-button"><span class="std std-ref">Authentication Button</span></a>)</p>
+<ul class="simple">
+<li><p>Aggiungi a IT-Wallet / Add to IT-Wallet (vedere <a class="reference internal" href="#ottenimento-dal-touchpoint-della-fonte-autentica"><span class="std std-ref">Ottenimento dal Touchpoint della Fonte Autentica</span></a>)</p></li>
+<li><p>Verifica con IT-Wallet / Verify with IT-wallet (vedere <a class="reference internal" href="#presentazione-da-remoto"><span class="std std-ref">Presentazione da remoto</span></a>)</p></li>
+</ul>
+</section>
 </section>
 <section id="focus-sugli-attestati-elettronici-di-attributi">
 <h3><span class="section-number">5.4.3. </span>Focus sugli Attestati Elettronici di Attributi<a class="headerlink" href="#focus-sugli-attestati-elettronici-di-attributi" title="Link to this heading">¶</a></h3>
 <p>Progettare e rappresentare in modo adeguato un Attestato Elettronico di Attributi è fondamentale per apportare reale valore nell’intero sistema. In questo, il ruolo della Fonte Autentica e del Fornitore di Wallet è determinante.</p>
-<p>La Fonte Autentica è responsabile della progettazione di tutte le caratteristiche alla base dell’Attestato Elettronico di Attributi in termini di:</p>
 <ul class="simple">
+<li><p>La Fonte Autentica è responsabile della progettazione di tutte le caratteristiche alla base dell’Attestato Elettronico di Attributi in termini di:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
 <li><p><strong>opportunità e valore percepito</strong>: cosa l’EAA è in grado di attestare, in quali contesti d’uso e da parte di chi;</p></li>
 <li><p><strong>facilità di comprensione</strong>: quanto è semplice e intuitivo per chi lo utilizza e per chi lo verifica;</p></li>
 <li><p><strong>efficacia comunicativa</strong>: quanto è considerato riconoscibile o percepito come affidabile da parte di chi lo utilizza o verifica.</p></li>
 </ul>
-<p>Il Fornitore di Wallet è responsabile della rappresentazione dell’Attestato Elettronico di Attributi in linea con:</p>
+</div></blockquote>
 <ul class="simple">
+<li><p>Il Fornitore di Wallet è responsabile della rappresentazione dell’Attestato Elettronico di Attributi in linea con:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
 <li><p>quanto definito dalle presenti Specifiche Tecniche in ottica di coerenza di sistema e di aderenza ai principi di usabilità [LG_DESIGN] e di accessibilità [RIF_ACCESSIBILITÀ];</p></li>
 <li><p>quanto veicolato dal Registro delle Fonti Autentiche e dal Catalogo delle Credenziali Digitali (vedi <a class="reference internal" href="registry.html#infrastruttura-del-registro"><span class="std std-ref">Infrastruttura del Registro</span></a>);</p></li>
 <li><p>quanto progettato a livello di UX/UI nella propria Soluzione Wallet.</p></li>
 </ul>
+</div></blockquote>
 <p>Al fine di guidare la Fonte Autentica nel progettare e il Fornitore di Wallet nel rappresentare adeguatamente un EAA, si definiscono a seguire gli elementi da considerare e la struttura da adottare a livello di Vista di Dettaglio:</p>
 <ul class="simple">
 <li><p><strong>Nome EAA</strong>, ossia la denominazione ufficiale, distintiva e comprensibile dall’Utente di un EAA;</p></li>
@@ -375,10 +554,10 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 </ul>
 </li>
 </ul>
-<figure class="align-center" id="id114">
+<figure class="align-center" id="id116">
 <a class="reference internal image-reference" href="_images/Focus-EAA-I-II-Level-ITA.svg"><img alt="Esempio di layout di Attestato Elettronico di Attributi, Vista di Dettaglio" src="_images/Focus-EAA-I-II-Level-ITA.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.19 </span><span class="caption-text">Esempio di layout di Attestato Elettronico di Attributi, Vista di Dettaglio</span><a class="headerlink" href="#id114" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.21 </span><span class="caption-text">Esempio di layout di Attestato Elettronico di Attributi, Vista di Dettaglio</span><a class="headerlink" href="#id116" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Di seguito sono riportati i requisiti di dettaglio per la progettazione e la rappresentazione degli EAA all’interno delle Soluzioni Wallet (vedi <a class="reference internal" href="registry.html#registro-delle-fonti-autentiche"><span class="std std-ref">Registro delle Fonti Autentiche</span></a> e <a class="reference internal" href="registry.html#catalogo-degli-attestati-elettronici"><span class="std std-ref">Catalogo degli Attestati Elettronici</span></a>). In particolare:</p>
@@ -422,7 +601,7 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <li><p>DEVE fornire il colore utilizzando esclusivamente una delle seguenti modalità colore: HEX, HSB, RGB, sRGB, HSL, o HSV.</p></li>
 </ul>
 </li>
-<li><p>DEVE fornire l’<strong>ordine degli Attributi</strong> desiderato tramite il parametro <code class="docutils literal notranslate"><span class="pre">data_capabilities.available_claims_order</span></code>. In particolare, la Fonte Autentica:</p>
+<li><p>DEVE fornire l’<strong>ordine degli Attributi</strong> desiderato tramite il parametro <code class="docutils literal notranslate"><span class="pre">data_capabilities.available_claims_order</span></code>. L’obiettivo è quello di caratterizzare l’EAA rendendolo riconoscibile agli occhi dell’Utente, soprattutto nei casi in cui si voglia dare a un nuovo EAA una forte immagine identitaria oppure si voglia mantenere coerenza con un eventuale corrispettivo fisico (es. si pensi alla patente di guida italiana e al suo caratteristico colore rosa). In particolare, la Fonte Autentica:</p>
 <ul>
 <li><p>DEVE ordinare i dati secondo la struttura predefinita:</p>
 <ul>
@@ -452,10 +631,10 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <li><p>Metadati</p></li>
 </ul>
 </li>
-</ul>
-</li>
 <li><p>DEVE includere il <strong>logo della Fonte Autentica</strong> e/o il <strong>logo dell’EAA</strong> specifico se forniti dalla Fonte Autentica per mezzo del <a class="reference internal" href="registry.html#registro-delle-fonti-autentiche"><span class="std std-ref">Registro delle Fonti Autentiche</span></a>;</p></li>
 <li><p>DEVE garantire l’adozione del colore dell’EAA definito dalla Fonte Autentica se indicato all’interno del <a class="reference internal" href="registry.html#registro-delle-fonti-autentiche"><span class="std std-ref">Registro delle Fonti Autentiche</span></a> a livello di tonalità colore (H). Il Wallet Provider PUÒ ottimizzare i valori di saturazione (S) e luminosità (B) per adattare il colore specifico ad esigenze legate all’accessibilità e/o alle scelte grafiche di prodotto della propria Soluzione Wallet. Qualora la Fonte Autentica non fornisca specifiche cromatiche, il Wallet Provider è tenuto a definire e adottare proprie scelte grafiche di default.</p></li>
+</ul>
+</li>
 </ul>
 <p>Il Fornitore di Wallet è il responsabile ultimo della resa grafica degli Attestati Elettronici di Attributi nelle proprie Soluzioni Wallet. Pertanto, per garantire un elevato livello di accessibilità [RIF_ACCESSIBILITÀ] e usabilità [LG_DESIGN], di seguito sono riportati ulteriori requisiti di Esperienza Utente. In particolare, il Fornitore di Wallet:</p>
 <ul class="simple">
@@ -465,17 +644,16 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <li><p>DEVE mostrare chiaramente il nome dell'EAA, così come definito dal Catalogo delle Credenziali Digitali attraverso il parametro <cite>credential_name</cite> (vedi <a class="reference internal" href="registry.html#catalogo-degli-attestati-elettronici"><span class="std std-ref">Catalogo degli Attestati Elettronici</span></a>), sia nella Vista di Anteprima che nelle Vista di Dettaglio;</p></li>
 <li><p>DEVE mostrare lo stato dell’EAA, se diverso da valido, per fornire trasparenza sul suo ciclo di vita, e PUÒ visualizzarlo se valido, sia nella Vista di Anteprima che nella Vista di Dettaglio. Evidenze specifiche sullo stato dell’EAA, se non valido, POSSONO essere fornite nella Vista di Dettaglio (ad esempio, il motivo per cui l’EAA è stato revocato);</p></li>
 <li><p>PUÒ includere informazioni opzionali per migliorare l’Esperienza Utente e la riconoscibilità dell’EAA, sia nella Vista di Anteprima che nella Vista di Dettaglio, come ad esempio il logo e/o il colore, come definito della Fonte Autentica attraverso il Registro delle Fonti Autentiche (vedi <a class="reference internal" href="registry.html#registro-delle-fonti-autentiche"><span class="std std-ref">Registro delle Fonti Autentiche</span></a>);</p></li>
-<li><p>DEVE includere le stesse informazioni della Vista di Anteprima nella Vista di Dettaglio e dare una rappresentazione esaustiva di tutti gli altri Attributi, seguendo l’ordine definito dalla Fonte Autentica nel Registro delle Fonti Autentiche (vedi <a class="reference internal" href="registry.html#registro-delle-fonti-autentiche"><span class="std std-ref">Registro delle Fonti Autentiche</span></a>);</p></li>
-<li><p>PUÒ includere elementi informativi aggiuntivi nella Vista di Dettaglio, ad esempio informazioni relative agli scenari di utilizzo o al motivo dell'eventuale invalidità dell’EAA;</p></li>
-<li><p>DEVE includere uno o più Engagement Buttons nella Vista di Dettaglio per consentire la gestione del ciclo di vita dell’EAA e permettere all'Utente di revocare o aggiornare un'EAA in qualsiasi momento (vedi <a class="reference internal" href="#gestione-degli-attestati-elettronici"><span class="std std-ref">Gestione degli Attestati Elettronici</span></a>);</p></li>
+<li><p>DEVE includere le stesse informazioni della Vista di Anteprima nella Vista di Dettaglio e dare una rappresentazione esaustiva di tutti gli altri Attributi, seguendo l’ordine definito dalla Fonte Autentica nel Registro delle Fonti Autentiche (vedi <a class="reference internal" href="registry.html#registro-delle-fonti-autentiche"><span class="std std-ref">Registro delle Fonti Autentiche</span></a>); PUÒ includere elementi informativi aggiuntivi nella Vista di Dettaglio, ad esempio informazioni relative agli scenari di utilizzo o al motivo dell'eventuale invalidità dell’EAA;</p></li>
+<li><p>DEVE includere Action Button nella Vista di Dettaglio per consentire la gestione del ciclo di vita dell’EAA e permettere all'Utente di revocare o aggiornare un'EAA in qualsiasi momento (vedi <a class="reference internal" href="#gestione-degli-attestati-elettronici"><span class="std std-ref">Gestione degli Attestati Elettronici</span></a>);</p></li>
 <li><p>DEVE garantire che l’EAA sia un elemento funzionale, affinché l'Utente possa accedere ai servizi forniti dai Verificatori di Attestati Elettronici in contesti digitali e di prossimità (vedi <a class="reference internal" href="#presentazione-degli-attestati-elettronici"><span class="std std-ref">Presentazione degli Attestati Elettronici</span></a>);</p></li>
 <li><p>DEVE mostrare nella Vista di Dettaglio un metodo di assistenza reso disponibile dalla Fonte Autentica tramite il parametro <cite>data_capabilities.contacts `(vedi :ref:`functionalities:Assistenza Utente</cite> e vedi <a class="reference internal" href="registry.html#registro-delle-fonti-autentiche"><span class="std std-ref">Registro delle Fonti Autentiche</span></a>).</p></li>
 </ul>
 <p>Di seguito un esempio di layout di Attestato Elettronico di Attributi, all'interno della Vista in Anteprima e Vista di Dettaglio.</p>
-<figure class="align-center" id="id116">
+<figure class="align-center" id="id118">
 <a class="reference internal image-reference" href="_images/A4-Focus-EAA.svg"><img alt="Esempio di layout di Attestato Elettronico di Attributi, Vista in Anteprima e Vista di Dettaglio" src="_images/A4-Focus-EAA.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.21 </span><span class="caption-text">Esempio di layout di Attestato Elettronico di Attributi, Vista in Anteprima e Vista di Dettaglio</span><a class="headerlink" href="#id116" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.23 </span><span class="caption-text">Esempio di layout di Attestato Elettronico di Attributi, Vista in Anteprima e Vista di Dettaglio</span><a class="headerlink" href="#id118" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -487,6 +665,7 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <li><p><strong>Presentazione in prossimità</strong>: l'Utente presenta il PID e/o un set di Attributi contenuti in uno o più Attestati Elettronici tramite l'Istanza del Wallet direttamente a un Verificatore di Attestati Elettronici o a un dispositivo preposti alla verifica in presenza;</p></li>
 <li><p><strong>Presentazione da remoto</strong>: l'Utente presenta il PID e/o un set di Attributi contenuti in uno o più Attestati Elettronici tramite l'Istanza del Wallet ad un Verificatore di Attestati Elettronici predisposto per la verifica online al fine, ad esempio, di Autenticarsi e fruire dei servizi erogati.</p></li>
 </ul>
+<p>Indipendentemente dal tipo di presentazione, il Fornitore di Wallet DEVE consentire all'Istanza del Wallet di informare l'Utente sull'identità della Relying Party. Nel caso di un Intermediario di Relying Party, l'Utente DEVE essere informato del coinvolgimento dell'intermediario durante la fase di richiesta della presentazione. L'identità della Relying Party primaria DEVE essere sempre visibile all'Utente e NON DEVE essere sostituita da quella dell'Intermediario di Relying Party.</p>
 <section id="presentazione-in-prossimita">
 <h3><span class="section-number">5.5.1. </span>Presentazione in prossimità<a class="headerlink" href="#presentazione-in-prossimita" title="Link to this heading">¶</a></h3>
 <p>La presentazione in prossimità consente all'Utente di esibire il PID e/o un set di Attributi contenuti in uno o più Attestati Elettronici tramite la propria Istanza del Wallet, secondo due diverse modalità:</p>
@@ -516,25 +695,25 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 </ul>
 <p>In caso di errori nell'utilizzo dell'Istanza del Wallet, il Fornitore di Wallet DEVE garantire all'Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione <a class="reference internal" href="#gestione-degli-errori"><span class="std std-ref">Gestione degli errori</span></a>.</p>
 <p>Il flusso è rappresentato di seguito con wireframe esemplificativi.</p>
-<figure class="align-center" id="id118">
+<figure class="align-center" id="id120">
 <a class="reference internal image-reference" href="_images/Presentazione-prossimita.svg"><img alt="Esempio di Esperienza Utente nella presentazione in prossimità" src="_images/Presentazione-prossimita.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.23 </span><span class="caption-text">Esempio di Esperienza Utente nella presentazione in prossimità</span><a class="headerlink" href="#id118" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.25 </span><span class="caption-text">Esempio di Esperienza Utente nella presentazione in prossimità</span><a class="headerlink" href="#id120" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="presentazione-da-remoto">
 <h3><span class="section-number">5.5.2. </span>Presentazione da remoto<a class="headerlink" href="#presentazione-da-remoto" title="Link to this heading">¶</a></h3>
-<p>La presentazione da remoto consente all'Utente di esibire il PID e/o un set di Attributi contenuti in uno o più Attestati Elettronici, facendo interagire la propria Istanza del Wallet con il Touchpoint di un Verificatore di Attestati Elettronici, tramite un apposito Engagement Button.</p>
+<p>La presentazione da remoto consente all'Utente di esibire il PID e/o un set di Attributi contenuti in uno o più Attestati Elettronici, facendo interagire la propria Istanza del Wallet con il Touchpoint di un Verificatore di Attestati Elettronici, tramite l'apposito <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>.</p>
 <p>Tale presentazione può avvenire in due diverse modalità, sulla base del tipo di dispositivo utilizzato per accedere al servizio di interesse:</p>
 <ul class="simple">
 <li><p><strong>Same-device</strong>: nel caso in cui l'Utente voglia accedere a un servizio digitale online integrato con un apposito sistema di verifica (<a class="reference internal" href="relying-party-instance.html#app-di-verifica-web"><span class="std std-ref">App di Verifica Web</span></a>) utilizzando lo stesso dispositivo su cui ha installato l'Istanza del Wallet;</p></li>
-<li><p><strong>Cross-device</strong>: nel caso in cui l'Utente voglia accedere a un servizio digitale integrato con un apposito sistema di verifica (<a class="reference internal" href="relying-party-instance.html#app-di-verifica-web"><span class="std std-ref">App di Verifica Web</span></a>) utilizzando un dispositivo differente rispetto a quello in cui ha installato l'Istanza del Wallet.</p></li>
+<li><p><strong>Cross-device</strong>: nel caso in cui l'Utente voglia accedere a un servizio digitale integrato con un apposito sistema di verifica (<a class="reference internal" href="relying-party-instance.html#app-di-verifica-web"><span class="std std-ref">App di Verifica Web</span></a>) utilizzando un dispositivo differente rispetto a quello su cui ha installato l'Istanza del Wallet.</p></li>
 </ul>
 <p>Di seguito i requisiti dell'Esperienza Utente relativi a entrambe le modalità che il Fornitore di Wallet DEVE garantire attraverso la propria Soluzione Wallet.</p>
 <p><strong>Same-device</strong></p>
 <ul class="simple">
-<li><p>L'Utente clicca l'Engagement Button reso disponibile nel Touchpoint del Verificatore di Attestati Elettronici;</p></li>
+<li><p>L'Utente clicca l'<a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a> reso disponibile nel Touchpoint del Verificatore di Attestati Elettronici;</p></li>
 <li><p>L’Utente seleziona la Soluzione Wallet con la quale procedere, attraverso un’interfaccia che DEVE seguire le indicazioni e le funzionalità previste per la Selection Page descritta nella sezione <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>;</p></li>
 <li><p>L'Utente accede all'Istanza del Wallet utilizzando la modalità di sblocco precedentemente impostata;</p></li>
 <li><p>L'Utente prende visione dei dati del PID e/o gli Attributi richiesti per la presentazione, del nome del Verificatore di Attestati Elettronici che li richiede e delle relative eventuali informative. L'Utente sceglie se presentare o meno eventuali dati del PID e/o Attributi non obbligatori ai fini della presentazione (Divulgazione Selettiva). L'Utente dà il proprio consenso per poter proseguire oppure annulla l'operazione;</p></li>
@@ -544,15 +723,15 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 </ul>
 <p>In caso di errori nell'utilizzo dell'Istanza del Wallet, il Fornitore di Wallet DEVE garantire all'Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione <a class="reference internal" href="#gestione-degli-errori"><span class="std std-ref">Gestione degli errori</span></a>.</p>
 <p>Il flusso è rappresentato di seguito con wireframe esemplificativi.</p>
-<figure class="align-center" id="id120">
+<figure class="align-center" id="id122">
 <a class="reference internal image-reference" href="_images/Presentazione-remoto-same-device.svg"><img alt="Esempio di Esperienza Utente nella presentazione da remoto, same-device" src="_images/Presentazione-remoto-same-device.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.25 </span><span class="caption-text">Esempio di Esperienza Utente nella presentazione da remoto, same-device</span><a class="headerlink" href="#id120" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.27 </span><span class="caption-text">Esempio di Esperienza Utente nella presentazione da remoto, same-device</span><a class="headerlink" href="#id122" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p><strong>Cross-device</strong></p>
 <ul class="simple">
-<li><p>L'Utente clicca l'Engagement Button reso disponibile nel Touchpoint del Verificatore di Attestati Elettronici che l'Utente sta navigando da un dispositivo diverso da quello su cui è installata l'Istanza del Wallet;</p></li>
+<li><p>L'Utente clicca l'<a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a> reso disponibile nel Touchpoint del Verificatore di Attestati Elettronici che l'Utente sta navigando da un dispositivo diverso da quello su cui è installata l'Istanza del Wallet;</p></li>
 <li><p>L’Utente seleziona la Soluzione Wallet con la quale procedere, attraverso un’interfaccia che DEVE seguire le indicazioni e le funzionalità previste per la Selection Page descritta nella sezione <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>;</p></li>
 <li><p>L'Utente inquadra il QR Code reso disponibile dal Verificatore di Attestati Elettronici, utilizzando la sua Istanza del Wallet o la fotocamera del proprio dispositivo; l’interfaccia del QR Code DEVE seguire le indicazioni e le funzionalità previste per la QR Code Page descritta nella sezione <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>;</p></li>
 <li><p>L'Utente prende visione dei dati del PID e/o degli Attributi richiesti per la presentazione, del nome del Verificatore di Attestati Elettronici che li richiede e delle relative eventuali informative. L'Utente sceglie se presentare o meno eventuali dati del PID e/o Attributi non obbligatori ai fini della presentazione (Divulgazione Selettiva). L'Utente dà il proprio consenso per poter proseguire oppure annulla l'operazione;</p></li>
@@ -562,29 +741,48 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 </ul>
 <p>In caso di errori nell'utilizzo dell'Istanza del Wallet, il Fornitore di Wallet DEVE garantire all'Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione <a class="reference internal" href="#gestione-degli-errori"><span class="std std-ref">Gestione degli errori</span></a>.</p>
 <p>Il flusso è rappresentato di seguito con wireframe esemplificativi.</p>
-<figure class="align-center" id="id123">
+<figure class="align-center" id="id125">
 <a class="reference internal image-reference" href="_images/Presentazione-remoto-cross-device.svg"><img alt="Esempio di Esperienza Utente nella presentazione da remoto, cross-device" src="_images/Presentazione-remoto-cross-device.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.28 </span><span class="caption-text">Esempio di Esperienza Utente nella presentazione da remoto, cross-device</span><a class="headerlink" href="#id123" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.30 </span><span class="caption-text">Esempio di Esperienza Utente nella presentazione da remoto, cross-device</span><a class="headerlink" href="#id125" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Di seguito è rappresentata a titolo esemplificativo la pagina con l’<a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>, oltre alla Selection Page, alla QR Code Page e alla Thank You Page con gli elementi dell’interfaccia e i testi adattati al flusso di <a class="reference internal" href="#presentazione-da-remoto"><span class="std std-ref">Presentazione da remoto</span></a>.</p>
+<figure class="align-center" id="id129">
+<a class="reference internal image-reference" href="_images/presentazione-remota.svg"><img alt="Esempio di pagina con Engagement Button, Selection page, QR code page, Thank you page per la presentazione da remoto" src="_images/presentazione-remota.svg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.34 </span><span class="caption-text">Esempio di pagina con Engagement Button, Selection page, QR code page, Thank you page per la presentazione da remoto</span><a class="headerlink" href="#id129" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <section id="autenticazione">
 <h4><span class="section-number">5.5.2.1. </span>Autenticazione<a class="headerlink" href="#autenticazione" title="Link to this heading">¶</a></h4>
 <p>L'Autenticazione è un caso d'uso specifico della presentazione remota e consente all'Utente di accedere in modo sicuro ai servizi resi disponibili da Verificatori di Attestati Elettronici pubblici e privati, presentando il PID ed eventualmente un set di Attributi contenuti negli Attestati Elettronici di Attributi ottenuti. Questo garantisce all'Utente il pieno controllo sui propri dati e la possibilità di condividere anche i soli dati strettamente necessari alla verifica da parte del Verificatore di Attestati Elettronici.</p>
-<p>Il processo di Autenticazione può avvenire in entrambe le modalità same-device e cross-device descritte sopra. Per quanto riguarda i requisiti funzionali a supporto dell'Esperienza Utente, si DEVONO rispettare gli stessi requisiti previsti per la presentazione in remoto nelle due modalità (same-device e cross-device).</p>
-<p>Infatti, a livello di Esperienza Utente, il processo di Autenticazione si distingue da un generico flusso di presentazione principalmente per le modalità di avvio del processo, in questo caso reso possibile a partire da uno specifico pulsante, l'Authentication Button.</p>
+<p>Il processo di Autenticazione può avvenire in entrambe le modalità same-device e cross-device descritte sopra. Per quanto riguarda i requisiti funzionali a supporto dell'Esperienza Utente, si DEVONO rispettare gli stessi requisiti previsti per la <a class="reference internal" href="#presentazione-da-remoto"><span class="std std-ref">presentazione in remoto</span></a> nelle due modalità (same-device e cross-device).</p>
+<p>Infatti, a livello di Esperienza Utente, il processo di Autenticazione si distingue da un generico flusso di presentazione principalmente per le modalità di avvio del processo, in questo caso reso possibile a partire da uno specifico pulsante, l'<a class="reference internal" href="#authentication-button"><span class="std std-ref">Authentication Button</span></a>.</p>
 <p>Al fine di garantire un processo di Autenticazione adeguato e coerente tra tutti i Verificatori di Attestati Elettronici, ciascun Verificatore di Attestati Elettronici DEVE rispettare i requisiti relativi all'aspetto grafico e all'Esperienza Utente descritti di seguito, unitamente al rispetto di [RIF_ACCESSIBILITÀ] e, nel caso di enti pubblici, delle [LG_DESIGN].</p>
+<p>Entrambi i flussi sono rappresentati di seguito con wireframe esemplificativi.</p>
+<figure class="align-center" id="id132">
+<a class="reference internal image-reference" href="_images/Autenticazione-same-device.svg"><img alt="Esempio di Esperienza Utente di Autenticazione same-device" src="_images/Autenticazione-same-device.svg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.37 </span><span class="caption-text">Esempio di Esperienza Utente di Autenticazione same-device.</span><a class="headerlink" href="#id132" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id135">
+<a class="reference internal image-reference" href="_images/Autenticazione-cross-device.svg"><img alt="Esempio di Esperienza Utente di Autenticazione cross-device" src="_images/Autenticazione-cross-device.svg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 5.40 </span><span class="caption-text">Esempio di Esperienza Utente di Autenticazione cross-device</span><a class="headerlink" href="#id135" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>I Verificatori di Attestati Elettronici DOVREBBERO utilizzare le <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a> per la progettazione. Qualora non intendano utilizzare tali risorse open source, i Verificatori di Attestati Elettronici POSSONO sviluppare in autonomia le Soluzioni Tecniche abilitanti il flusso di Autenticazione, assicurando coerenza con le specifiche fornite di seguito.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Le immagini presenti in questa sezione sono da considerarsi esemplificative in quanto oggetto di evolutive di interfaccia (UI), in attesa della definizione del branding del Sistema IT-Wallet.</p>
+<p>Le immagini presenti in questa sezione sono da considerarsi esemplificative in quanto oggetto di evolutive di interfaccia (UI).</p>
 </div>
 <p>I Verificatori di Attestati Elettronici, in ogni caso, DEVONO abilitare il processo di Autenticazione rendendo disponibili le seguenti pagine:</p>
 <ul class="simple">
 <li><p><strong>Discovery Page</strong>: ha l'obiettivo di mostrare all'Utente tutti i metodi di Autenticazione disponibili;</p></li>
 <li><p><strong>Selection Page</strong>: ha lo scopo di mostrare all’Utente tutte le Soluzioni Wallet presenti nel Registro del Sistema IT-Wallet e permettere di scegliere con quale continuare il processo di Autenticazione;</p></li>
 <li><p><strong>QR Code Page</strong> (<em>solo per modalità cross-device</em>): ha lo scopo di invitare l'Utente a inquadrare il codice QR;</p></li>
-<li><p><strong>Waiting Page</strong> (<em>solo per modalità cross-device</em>): ha lo scopo di invitare l'Utente a continuare il processo di Autenticazione sulla propria Istanza del Wallet;</p></li>
 <li><p><strong>Thank You Page</strong>: ha lo scopo di comunicare all'Utente l'avvenuta Autenticazione;</p></li>
 <li><p><strong>Error Page</strong>: ha lo scopo di comunicare all'Utente eventuali errori legati al flusso di Autenticazione.</p></li>
 </ul>
@@ -596,16 +794,16 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <p>Di seguito invece gli elementi specifici caratteristici delle diverse pagine.</p>
 <p><strong>Discovery Page</strong></p>
 <p>Per garantire l'Autenticazione tramite il Sistema IT-Wallet, il Verificatore di Attestati Elettronici PUÒ aggiornare la propria Discovery Page con quella resa disponibile nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
-<figure class="align-center" id="id128">
+<figure class="align-center" id="id140">
 <a class="reference internal image-reference" href="_images/discovery-page.svg"><img alt="Modello di layout di Discovery Page a griglia" src="_images/discovery-page.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.33 </span><span class="caption-text">Modello di layout di Discovery Page a griglia</span><a class="headerlink" href="#id128" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.45 </span><span class="caption-text">Modello di layout di Discovery Page a griglia</span><a class="headerlink" href="#id140" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>In alternativa, il Verificatore di Attestati Elettronici PUÒ mantenere la propria Discovery Page, ma DEVE in ogni caso integrare l'Authentication Button, come da indicazioni presenti nella sezione <a class="reference internal" href="#authentication-button">Authentication Button</a>.</p>
+<p>In alternativa, il Verificatore di Attestati Elettronici PUÒ mantenere la propria Discovery Page, ma DEVE in ogni caso integrare l'Authentication Button, come da indicazioni presenti nella sezione <a class="reference internal" href="#authentication-button"><span class="std std-ref">Authentication Button</span></a>.</p>
 <p>Il Verificatore di Attestati Elettronici che implementa la pagina:</p>
 <ul class="simple">
-<li><p>DEVE garantire la presenza di tutte le modalità di Autenticazione attraverso l'identità digitale tra cui la modalità di Autenticazione del Sistema IT-Wallet, quindi tramite l'Authentication Button;</p></li>
+<li><p>DEVE garantire la presenza di tutte le modalità di Autenticazione tramite l'identità digitale tra cui la modalità di Autenticazione del Sistema IT-Wallet, quindi tramite l'Authentication Button;</p></li>
 <li><p>PUÒ presentare anche modalità di Autenticazione alternative, se disponibili;</p></li>
 <li><p>DOVREBBE garantire informazioni minime a supporto, per permettere all'Utente di compiere una scelta consapevole e informata.</p></li>
 </ul>
@@ -618,10 +816,10 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <p>Questa sezione descrive come visualizzare la Selection Page come parte di un processo di Autenticazione. La stessa pagina DOVREBBE essere utilizzata anche dai Verificatori di Attestati Elettronici durante la presentazione e da terze parti che supportano il Credential Offer per abilitare l'opzione di selezione della Soluzione Wallet. Ulteriori dettagli sono forniti in <a class="reference internal" href="remote-flow.html#flusso-remoto"><span class="std std-ref">Flusso Remoto</span></a> e <a class="reference internal" href="credential-issuance-low-level.html#flusso-credential-offer"><span class="std std-ref">Flusso Credential Offer</span></a>.</p>
 </div>
 <p>Il Verificatore di Attestati Elettronici DEVE implementare la Selection Page resa disponibile nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
-<figure class="align-center" id="id130">
+<figure class="align-center" id="id142">
 <a class="reference internal image-reference" href="_images/selection-page.svg"><img alt="Selection Page" src="_images/selection-page.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.35 </span><span class="caption-text">Selection Page</span><a class="headerlink" href="#id130" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.47 </span><span class="caption-text">Selection Page</span><a class="headerlink" href="#id142" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Il Verificatore di Attestati Elettronici che implementa la pagina:</p>
@@ -636,22 +834,22 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 </ul>
 <p>Il Verificatore di Attestati Elettronici PUÒ inserire un componente testuale per promuovere la modalità di Autenticazione tramite IT-Wallet, che rimandi al sito ufficiale del Sistema, come rappresentato nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
 <p><strong>QR Code Page (*solo per modalità cross-device*)</strong></p>
-<p>La QR Code Page è la pagina su cui atterra l'Utente che ha scelto l'Autenticazione tramite il Sistema IT-Wallet in un flusso cross-device, e ha lo scopo di invitare l'Utente a scannerizzare, con la propria Istanza del Wallet, il codice QR generato.</p>
+<p>La QR Code Page è la pagina su cui atterra l'Utente che ha scelto l'Autenticazione tramite il Sistema IT-Wallet in un flusso cross-device, e ha lo scopo di invitare l'Utente a scannerizzare, con la propria Istanza del Wallet o con la fotocamera del proprio dispositivo, il codice QR generato.</p>
 <p>Il Verificatore di Attestati Elettronici DEVE implementare la QR Code Page (flusso cross-device) resa disponibile nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
-<figure class="align-center" id="id132">
+<figure class="align-center" id="id147">
 <a class="reference internal image-reference" href="_images/QR-page.svg"><img alt="QR Code Page" src="_images/QR-page.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.37 </span><span class="caption-text">QR Code Page</span><a class="headerlink" href="#id132" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.52 </span><span class="caption-text">QR Code Page</span><a class="headerlink" href="#id147" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Il Verificatore di Attestati Elettronici che implementa la pagina:</p>
 <ul class="simple">
 <li><p>DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo;</p></li>
 <li><p>DEVE assicurare che i copy presenti nella pagina rispecchino quelli riportati nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>;</p></li>
-<li><p>DEVE includere una Call to Action che, in caso di timeout, permetta all'Utente di generare un nuovo codice QR;</p></li>
+<li><p>DEVE includere una Call to Action che, se prevista la scadenza del codice QR, permetta all'Utente di generare un nuovo codice QR;</p></li>
 <li><p>DEVE includere una Call to Action che permetta all'Utente di annullare l'operazione e tornare alla Discovery Page.</p></li>
 </ul>
-<p>Inoltre, nei rispetto di [RIF_ACCESSIBILITÁ], relativamente al codice QR, il Verificatore di Attestati Elettronici:</p>
+<p>Inoltre, nel rispetto di [RIF_ACCESSIBILITÁ], relativamente al codice QR, il Verificatore di Attestati Elettronici:</p>
 <ul class="simple">
 <li><p>DEVE rispettare le dimensioni minime raccomandate per garantire una scansione efficace. Una misura di 150x150 pixel è generalmente adeguata, ma per codici con alta densità di dati (e.g. URL lunghi o numerosi caratteri), è consigliabile aumentarla a 300x300 pixel o più;</p></li>
 <li><p>DEVE garantire un contrasto minimo tra il codice QR e lo sfondo (la condizione ideale prevede uno sfondo bianco con un codice QR nero);</p></li>
@@ -661,27 +859,13 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <li><p>DEVE garantire il formato SVG;</p></li>
 <li><p>DEVE garantire che non venga parzialmente nascosto da testo o altri elementi.</p></li>
 </ul>
-<p><strong>Waiting Page (*solo per modalità cross-device*)</strong></p>
-<p>La Waiting Page è la pagina che invita l'Utente a proseguire il processo di Autenticazione sulla propria Istanza del Wallet, a valle della scansione del codice QR.</p>
-<p>Il Verificatore di Attestati Elettronici DEVE implementare la Waiting Page (cross-device) resa disponibile nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
-<figure class="align-center" id="id134">
-<a class="reference internal image-reference" href="_images/waiting-page.svg"><img alt="Waiting Page" src="_images/waiting-page.svg" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5.39 </span><span class="caption-text">Waiting Page</span><a class="headerlink" href="#id134" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>Il Verificatore di Attestati Elettronici che implementa la pagina:</p>
-<ul class="simple">
-<li><p>DEVE includere gli elementi propri dell'Identità Visiva del Sistema IT-Wallet, tra cui il Logo e un'icona o altro elemento grafico che aiuti a veicolare il messaggio della pagina;</p></li>
-<li><p>DEVE assicurare che i copy presenti nella pagina rispecchino quelli riportati nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p></li>
-</ul>
 <p><strong>Thank You Page</strong></p>
-<p>La Thank You Page è la pagina sui cui l'Utente atterra una volta concluso il processo di Autenticazione attraverso la propria Istanza del Wallet e ha l'obiettivo di invitare l'Utente a proseguire nell'area riservata.</p>
+<p>La Thank You Page è la pagina sui cui l'Utente atterra una volta concluso il processo di Autenticazione attraverso la propria Istanza del Wallet e ha l'obiettivo di informare l’Utente sull’avvenuta Autenticazione.</p>
 <p>Il Verificatore di Attestati Elettronici DEVE implementare la Thank You Page resa disponibile nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
-<figure class="align-center" id="id136">
+<figure class="align-center" id="id149">
 <a class="reference internal image-reference" href="_images/thank-you-page.svg"><img alt="Thank You Page" src="_images/thank-you-page.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.41 </span><span class="caption-text">Thank You Page</span><a class="headerlink" href="#id136" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.54 </span><span class="caption-text">Thank You Page</span><a class="headerlink" href="#id149" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Il Verificatore di Attestati Elettronici che implementa la pagina:</p>
@@ -693,10 +877,10 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <p><strong>Error Page</strong></p>
 <p>La pagina di errore rappresenta quella tipologia di pagina su cui l'Utente atterra in caso di errori nel corso del flusso di Autenticazione, e ha lo scopo di comunicare all'Utente la natura di tali errori (es. errore tecnico, assenza di rete, malfunzionamento dell'Istanza del Wallet, consenso alla presentazione dei dati negato etc.) e di presentare le azioni che l'Utente può intraprendere. Per approfondimenti sulle casistiche di errore si rimanda alla sezione <a class="reference internal" href="#gestione-degli-errori"><span class="std std-ref">Gestione degli errori</span></a>.</p>
 <p>Il Verificatore di Attestati Elettronici DEVE implementare la Error Page resa disponibile nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>.</p>
-<figure class="align-center" id="id138">
+<figure class="align-center" id="id151">
 <a class="reference internal image-reference" href="_images/error-page.svg"><img alt="Error Page" src="_images/error-page.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.43 </span><span class="caption-text">Error Page</span><a class="headerlink" href="#id138" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.56 </span><span class="caption-text">Error Page</span><a class="headerlink" href="#id151" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Il Verificatore di Attestati Elettronici che implementa la pagina:</p>
@@ -705,22 +889,9 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <li><p>DEVE assicurare che i copy presenti nella pagina rispecchino quelli riportati nelle <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>;</p></li>
 <li><p>DEVE prevedere una o più Call to Action che invitino l'Utente a intraprendere le azioni previste (es. riprova, contatta l'assistenza, etc.).</p></li>
 </ul>
-<p>Entrambi i flussi sono rappresentati di seguito con wireframe esemplificativi.</p>
-<figure class="align-center" id="id140">
-<a class="reference internal image-reference" href="_images/Autenticazione-same-device.svg"><img alt="Esempio di Esperienza Utente di Autenticazione same-device" src="_images/Autenticazione-same-device.svg" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5.45 </span><span class="caption-text">Esempio di Esperienza Utente di Autenticazione same-device.</span><a class="headerlink" href="#id140" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id143">
-<a class="reference internal image-reference" href="_images/Autenticazione-cross-device.svg"><img alt="Esempio di Esperienza Utente di Autenticazione cross-device" src="_images/Autenticazione-cross-device.svg" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5.48 </span><span class="caption-text">Esempio di Esperienza Utente di Autenticazione cross-device</span><a class="headerlink" href="#id143" title="Link to this image">¶</a></p>
-</figcaption>
-</figure>
 <section id="authentication-button">
 <h5><span class="section-number">5.5.2.1.1. </span>Authentication Button<a class="headerlink" href="#authentication-button" title="Link to this heading">¶</a></h5>
-<p>L'Authentication Button &quot;Entra con IT-Wallet&quot; funge da Engagement Button, fornendo agli Utenti un modo standardizzato per Autenticarsi utilizzando il proprio portafoglio digitale.</p>
+<p>L'Authentication Button &quot;Entra con IT-Wallet&quot; funge da <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>, fornendo agli Utenti un modo standardizzato per Autenticarsi utilizzando il proprio portafoglio digitale.</p>
 <p>I Verificatori di Attestati Elettronici DEVONO rendere disponibile l'Authentication Button all'interno della Discovery Page delle proprie Soluzioni Tecniche per permettere all'Utente di Autenticarsi ai propri servizi tramite un'Istanza del Wallet.</p>
 <p>L'Authentication Button è caratterizzato dai seguenti requisiti:</p>
 <ul class="simple">
@@ -731,7 +902,7 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <li><p>DEVE riportare la dicitura &quot;Entra con IT-Wallet&quot;;</p></li>
 <li><p>DOVREBBE essere sempre accompagnato da un link esterno (ad es. &quot;Scopri di più&quot;) che rimanda al sito ufficiale del Sistema IT-Wallet, indicato nella sezione <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>;</p></li>
 <li><p>Gli attori che intendono integrare l'Authentication Button nella propria Soluzione Tecnica DEVONO garantirne la traduzione in altre lingue, almeno quella inglese;</p></li>
-<li><p>Qualora lo spazio a disposizione lo consenta e/o il contesto lo richieda, l'Authentication Button DOVREBBE essere accompagnato da un testo descrittivo, ad esempio &quot;IT-Wallet è il Sistema di portafoglio digitale italiano che ti dà pieno controllo sulle tue informazioni, senza che l’ente che le ha rilasciate venga a conoscenza di quando e come vengono usate&quot; oppure &quot;Accedi tramite un’app IT-Wallet, il Sistema di portafoglio digitale italiano che semplifica le interazioni tra cittadini, pubbliche amministrazioni e soggetti privati, nel mondo fisico e in quello digitale. Con IT-Wallet hai il pieno controllo sulle tue informazioni, condividendole solo quando necessario e in modo sicuro, senza che l’ente che le ha rilasciate venga a conoscenza di quando e come vengono usate.&quot;.</p></li>
+<li><p>Qualora lo spazio a disposizione lo consenta e/o il contesto lo richieda, l'Authentication Button DOVREBBE essere accompagnato da un testo descrittivo: &quot;IT-Wallet è il sistema italiano di portafogli digitali che ti permette di autenticarti online e di accedere a servizi pubblici e privati in modo sicuro e veloce, utilizzando i dati, i documenti e le qualifiche che puoi ottenere in digitale in uno dei portafogli che ne fanno parte.&quot;.</p></li>
 </ul>
 <p>Di seguito alcuni esempi non normativi di layout dell'Authentication Button:</p>
 <blockquote>
@@ -741,10 +912,10 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 </div></blockquote>
 <p>Varianti di Authentication Button</p>
 <p>Le modalità di integrazione dell'Authentication Button nella Discovery Page possono essere molteplici a seconda del layout della pagina stessa. Di seguito alcuni esempi illustrativi e non esaustivi di Discovery Page, rispettivamente con struttura a griglia, a tab e in lista.</p>
-<figure class="align-default" id="id148">
+<figure class="align-default" id="id153">
 <img alt="Esempi di layout di Discovery Page a griglia, a tab e in lista :width: 100% :align: center" src="_images/discovery-page-layouts.svg" />
 <figcaption>
-<p><span class="caption-number">Fig. 5.53 </span><span class="caption-text">Esempi di layout di Discovery Page a griglia, a tab e in lista</span><a class="headerlink" href="#id148" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.58 </span><span class="caption-text">Esempi di layout di Discovery Page a griglia, a tab e in lista</span><a class="headerlink" href="#id153" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Per maggiori dettagli sull'utilizzo dell'Authentication Button vedi la sezione <a class="reference internal" href="#autenticazione"><span class="std std-ref">Autenticazione</span></a>.</p>
@@ -757,22 +928,22 @@ Di seguito sono riportati i requisiti di Esperienza Utente per assicurare una vi
 <p>La Risorsa Ufficiale dell'Authentication button html è disponibile nella sezione <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a> di queste Specifiche Tecniche.</p>
 <p><strong>Authentication Button &quot;Entra con IT-Wallet&quot; - svg</strong>
 Per approfondimenti sull'Authentication button consultare il Brand Manual, indicato nella sezione <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a>. La Risorsa Ufficiale dell'Authentication button è disponibile nella sezione <a class="reference internal" href="official-resources.html#risorse-ufficiali"><span class="std std-ref">Risorse Ufficiali</span></a> di queste Specifiche Tecniche.</p>
-<figure class="align-center" id="id150">
+<figure class="align-center" id="id155">
 <a class="reference internal image-reference" href="_images/Authentication-button-ITA_size_variants.svg"><img alt="Authentication button nelle varianti di dimensione (S, M, L)" src="_images/Authentication-button-ITA_size_variants.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.55 </span><span class="caption-text">Authentication button nelle varianti di dimensione (S, M, L)</span><a class="headerlink" href="#id150" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.60 </span><span class="caption-text">Authentication button nelle varianti di dimensione (S, M, L)</span><a class="headerlink" href="#id155" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id152">
+<figure class="align-center" id="id157">
 <a class="reference internal image-reference" href="_images/IT-Wallet-Authentication-Button-ITA-Fixed-Justified.svg"><img alt="Authentication button giustificato, a larghezza fissa" src="_images/IT-Wallet-Authentication-Button-ITA-Fixed-Justified.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.57 </span><span class="caption-text">Authentication button giustificato, a larghezza fissa</span><a class="headerlink" href="#id152" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.62 </span><span class="caption-text">Authentication button giustificato, a larghezza fissa</span><a class="headerlink" href="#id157" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id154">
+<figure class="align-center" id="id159">
 <a class="reference internal image-reference" href="_images/IT-Wallet-Authentication-Button-ITA-Fixed-Centered.svg"><img alt="Authentication button centrato, a larghezza fissa" src="_images/IT-Wallet-Authentication-Button-ITA-Fixed-Centered.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.59 </span><span class="caption-text">Authentication button centrato, a larghezza fissa</span><a class="headerlink" href="#id154" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.64 </span><span class="caption-text">Authentication button centrato, a larghezza fissa</span><a class="headerlink" href="#id159" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -791,22 +962,119 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 <p>Di seguito i principali aspetti che impattano e determinano l'Esperienza Utente nell'ambito della gestione degli Attestati Elettronici per mezzo di un'Istanza del Wallet e i requisiti funzionali riferiti a ciascuna categoria.</p>
 <section id="stato-degli-attestati-elettronici">
 <h3><span class="section-number">5.6.1. </span>Stato degli Attestati Elettronici<a class="headerlink" href="#stato-degli-attestati-elettronici" title="Link to this heading">¶</a></h3>
-<p>Per garantire l'affidabilità e promuovere il corretto utilizzo della propria Soluzione Wallet, il Fornitore di Wallet DEVE dare all'Utente visibilità dello stato degli Attestati Elettronici ottenuti nella propria Istanza del Wallet sulla base delle informazioni ricevute dal Fornitore di Attestati Elettronici, gestore del loro ciclo di vita.</p>
-<p>Ogni Attestato Elettronico può assumere lo stato valido o non valido, con conseguenti impatti circa le sue possibilità di utilizzo, in particolare:</p>
+<p>Per garantire l'affidabilità e promuovere il corretto utilizzo della propria Soluzione Wallet, il Fornitore di Wallet DEVE dare all'Utente visibilità dello stato degli Attestati Elettronici ottenuti nella propria Istanza del Wallet sulla base delle informazioni ricevute dal Fornitore di Attestati Elettronici che ne gestisce il ciclo di vita.</p>
+<p>Gli stati ammissibili per un Attestato Elettronico sono i seguenti:</p>
 <ul class="simple">
-<li><p><strong>valido</strong>: gli Attestati Elettronici validi DEVONO essere utilizzabili quindi presentabili. Tra questi rientrano anche gli Attestati Elettronici in scadenza. Qualora un Attestato Elettronico fosse in scadenza, l'Istanza del Wallet DOVREBBE informare l'Utente con un adeguato preavviso utile ad avviare per tempo una richiesta di ri-ottenimento o, se necessario, di revoca;</p></li>
-<li><p><strong>non valido</strong>: gli Attestati Elettronici non validi NON DEVONO essere utilizzabili quindi presentabili. Rientrano in questa categoria gli Attestati Elettronici scaduti o revocati. In questi casi l'Istanza del Wallet DEVE informare l'Utente circa lo stato di non validità e DOVREBBE dare evidenza della motivazione. Qualora l'Attestato Elettronico non fosse più valido, e non fosse quindi più possibile alcuno scenario di utilizzo, l'Istanza del Wallet DEVE permettere all'Utente di aggiornarlo o eliminarlo tramite apposita Call To Action.</p></li>
+<li><p><strong>Valido</strong> (<code class="docutils literal notranslate"><span class="pre">valid</span></code>): l’EAA risulta emesso senza alcuna evidenza di criticità o problematiche. In questo caso, l’Istanza del Wallet DEVE garantire all’Utente piene funzionalità a livello di presentazione, sia in prossimità che in remoto;</p></li>
+<li><p><strong>Sospeso</strong> (<code class="docutils literal notranslate"><span class="pre">suspended</span></code>): l’EAA risulta temporaneamente non valido, in una condizione di reversibilità (es. patente di guida sospesa). In questo caso, l’Istanza del Wallet:</p>
+<ul>
+<li><p>DEVE darne all’Utente adeguata evidenza;</p></li>
+<li><p>DEVE invitare l’Utente ad attendere che l’EAA torni automaticamente in stato valido alla fine del periodo di sospensione;</p></li>
+<li><p>DEVE garantire all’Utente la funzionalità di presentazione, sia in prossimità che in remoto. Conseguentemente, l’Istanza di Relying Party DEVE adeguatamente informare il Verificatore circa lo specifico stato dell’EAA.</p></li>
 </ul>
-<p>Di seguito i requisiti funzionali a supporto dell'Esperienza Utente relativi all’aggiornamento dell'Attestato Elettronico che il Fornitore di Attestati Elettronici DEVE garantire attraverso la Soluzione Wallet:
-- L'Utente visualizza nella Vista in Anteprima dell’Attestato che il suo stato è diverso da valido;
-- L'Utente visualizza nella Vista di Dettaglio un messaggio che lo informa del nuovo stato dell’Attestato e PUÒ scoprire maggiori informazioni;
-- L’Utente visualizza eventuali informazioni aggiuntive sui requisiti e/o limitazioni relative allo stato dell’Attestato Elettronico di Attributi e PUÒ chiudere il messaggio oppure procedere con un eventuale azione richiesta dal Fornitore di Attestati Elettronici.
-- L'Utente visualizza all'interno della Vista di Dettaglio apposite Call To Action per eliminare l'Attestato Elettronico o aggiornarlo se in stato non più valido.</p>
+</li>
+<li><p><strong>Da aggiornare</strong> (<code class="docutils literal notranslate"><span class="pre">update</span></code> o <code class="docutils literal notranslate"><span class="pre">attribute_update</span></code>): l’EAA risulta non valido in quanto una o più delle sue informazioni, a livello di metadata o di Attributi, è obsoleta. In questo caso, l’Istanza del Wallet:</p>
+<ul>
+<li><p>Qualora ad essere obsoleto sia uno o più dei metadata dell’EAA:</p>
+<ul>
+<li><p>DOVREBBE recepire in automatico l’aggiornamento dell’EAA gestito dal Fornitore di Attestati Elettronici senza informare e richiedere azioni da parte dell’Utente.</p></li>
+</ul>
+</li>
+<li><p>Qualora ad essere obsoleto sia uno o più degli Attributi dell’EAA:</p>
+<ul>
+<li><p>DEVE darne all’Utente adeguata evidenza;</p></li>
+<li><p>DEVE invitare l’Utente ad aggiornare l’EAA attraverso un nuovo processo di emissione;</p></li>
+<li><p>DEVE garantire all’Utente la funzionalità di presentazione, sia in prossimità che in remoto. Conseguentemente, l’Istanza di Relying Party DEVE adeguatamente informare il Verificatore circa lo specifico stato dell’EAA.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Non valido</strong> (<code class="docutils literal notranslate"><span class="pre">invalid</span></code>): l’EAA risulta non valido, in una condizione di irreversibilità (es. patente di guida revocata). In questo caso, l’Istanza del Wallet:</p>
+<ul>
+<li><p>DEVE darne all’Utente adeguata evidenza;</p></li>
+<li><p>DEVE invitare l’Utente ad aggiornare o eliminare l’EAA a seconda che sia o meno titolato a riottenerlo e, quindi, ad usarlo ancora (es. patente di guida rinnovata – e quindi riottenibile sotto forma di EAA - oppure prescrizione medica utilizzata – e quindi non più riottenibile sotto forma di EAA);</p></li>
+<li><p>DEVE garantire all’Utente la funzionalità di presentazione, sia in prossimità che in remoto. Conseguentemente, l’Istanza di Relying Party DEVE adeguatamente informare il Verificatore circa lo specifico stato dell’EAA.</p></li>
+</ul>
+</li>
+</ul>
+<p>Oltre agli stati sopra elencati, è bene specificare che un EAA è soggetto a scadenza. Si distinguono due tipologie di scadenza:</p>
+<ul class="simple">
+<li><p><strong>La scadenza amministrativa</strong>: caratterizza alcuni EAA ed è fornita dalla Fonte Autentica tra gli Attributi dell’EAA stesso (es. data di scadenza della patente di guida);</p></li>
+<li><p><strong>La scadenza tecnica</strong>: caratterizza tutti gli EAA ed è definita dalla Fonte Autentica in sinergia con il Fornitore di Attestati Elettronici con l’obiettivo di mitigare i rischi di sicurezza. Tale scadenza è generalmente fissata a 1 anno o comunque a un periodo inferiore o uguale alla data di scadenza amministrativa.</p></li>
+</ul>
+<p>Di conseguenza, l’EAA assume i seguenti ulteriori stati:</p>
+<ul>
+<li><p><strong>In scadenza</strong>: l’EAA risulta valido ma vicino alla data di scadenza amministrativa, se resa disponibile dalla Fonte Autentica, oppure alla data di scadenza tecnica. In questo caso, l’Istanza del Wallet:</p>
+<ul>
+<li><p>Qualora ad essere vicina sia la data di scadenza amministrativa (es. mancano 30 giorni):</p>
+<ul class="simple">
+<li><p>DOVREBBE darne all’Utente adeguata evidenza;</p></li>
+<li><p>DOVREBBE invitare l’Utente a compiere eventuali azioni necessarie per poter riottenere l’EAA aggiornato (es. rinnovare la patente di guida presso gli uffici competenti);</p></li>
+<li><p>DEVE garantire all’Utente la funzionalità di presentazione, sia in prossimità che in remoto.</p></li>
+</ul>
+</li>
+<li><p>Qualora ad essere vicina sia la data di scadenza tecnica (es. mancano 7 giorni):</p>
+<ul class="simple">
+<li><p>DOVREBBE innescare in automatico l’aggiornamento dell’EAA gestito dal Fornitore di Attestati Elettronici senza richiedere azioni da parte dell’Utente.</p></li>
+<li><p>Se l’aggiornamento automatico va a buon fine e restituisce l’EAA aggiornato:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>DEVE sostituirlo al precedente senza generare duplicazioni inattese, disservizi o notifiche all’Utente;</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Se l’aggiornamento automatico va a buon fine ma non restituisce alcun EAA:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>DEVE adeguatamente informare l’Utente circa la potenziale perdita di titolarità nei confronti dell’EAA stesso;</p></li>
+<li><p>DEVE invitare l’Utente ad aggiornare o eliminare l’EAA a seconda che sia o meno titolato a riottenerlo e, quindi, ad usarlo ancora (es. patente di guida rinnovata – e quindi riottenibile sotto forma di EAA - oppure prescrizione medica utilizzata – e quindi non più riottenibile sotto forma di EAA);</p></li>
+<li><p>DEVE garantire all’Utente la funzionalità di presentazione, sia in prossimità che in remoto. Conseguentemente, l’Istanza di Relying Party DEVE adeguatamente informare il Verificatore circa lo specifico stato dell’EAA.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Se l’aggiornamento automatico non dovesse andare a buon fine per indisponibilità del servizio o altri errori tecnici:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>DOVREBBE effettuare almeno un nuovo tentativo di aggiornamento prima che l’EAA superi la data di scadenza tecnica.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>Scaduto</strong>: l’EAA risulta valido ma ha superato la data di scadenza amministrativa, se resa disponibile dalla Fonte Autentica, oppure ha superato la data di scadenza tecnica. In questo caso, l’Istanza del Wallet:</p>
+<ul class="simple">
+<li><p>Qualora sia stata superata la data di scadenza amministrativa:</p>
+<ul>
+<li><p>DEVE darne all’Utente adeguata evidenza;</p></li>
+<li><p>DEVE invitare l’Utente a compiere eventuali azioni necessarie per riottenere l’EAA aggiornato (es. rinnovare la patente presso gli uffici competenti);</p></li>
+<li><p>DEVE garantire all’Utente la funzionalità di presentazione, sia in prossimità che in remoto. Conseguentemente, l’Istanza di Relying Party DEVE adeguatamente informare il Verificatore circa lo specifico stato dell’EAA.</p></li>
+</ul>
+</li>
+<li><p>Qualora sia stata superata la data di scadenza tecnica (aggiornamento automatico non effettuato o fallito):</p>
+<ul>
+<li><p>DEVE darne all’Utente adeguata evidenza, distinguendo il caso specifico da quello di un’eventuale scadenza amministrativa;</p></li>
+<li><p>DEVE invitare l’Utente ad aggiornare l’EAA, ossia ad intraprendere un flusso di riemissione dell’EAA stesso;</p></li>
+<li><p>DEVE consentire all’Utente la funzionalità di presentazione, sia in prossimità che in remoto. Conseguentemente, l’Istanza di Relying Party DEVE adeguatamente informare il Verificatore circa lo specifico stato dell’EAA.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Di seguito i requisiti funzionali a supporto dell'Esperienza Utente relativi all’aggiornamento dell'Attestato Elettronico che il Fornitore di Attestati Elettronici DEVE garantire attraverso la Soluzione Wallet:</p>
+<ul class="simple">
+<li><p>L'Utente visualizza nella Vista in Anteprima dell’Attestato che il suo stato è diverso da valido;</p></li>
+<li><p>L'Utente visualizza nella Vista di Dettaglio un messaggio che lo informa del nuovo stato dell’Attestato e PUÒ scoprire maggiori informazioni;</p></li>
+<li><p>L’Utente visualizza eventuali informazioni aggiuntive sui requisiti e/o limitazioni relative allo stato dell’Attestato Elettronico di Attributi e PUÒ chiudere il messaggio oppure procedere con un eventuale azione richiesta dal Fornitore di Attestati Elettronici.</p></li>
+<li><p>L'Utente visualizza all'interno della Vista di Dettaglio apposite Call To Action per eliminare l'Attestato Elettronico o aggiornarlo se in stato non più valido.</p></li>
+</ul>
 <p>Il flusso è rappresentato di seguito con wireframe esemplificativi.</p>
-<figure class="align-default" id="id156">
+<figure class="align-default" id="id161">
 <a class="reference internal image-reference" href="_images/Aggiornamento-EAA.svg"><img alt="Esempio di Esperienza Utente nell'Aggiornamento di un Attestato Elettronico" src="_images/Aggiornamento-EAA.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.61 </span><span class="caption-text">Esempio di Esperienza Utente nell'Aggiornamento di un Attestato Elettronico.</span><a class="headerlink" href="#id156" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.66 </span><span class="caption-text">Esempio di Esperienza Utente nell'Aggiornamento di un Attestato Elettronico.</span><a class="headerlink" href="#id161" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 <section id="revoca-degli-attestati-elettronici">
@@ -839,10 +1107,13 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 - l'Utente prende visione di tutte le informazioni rilevanti l’azione in corso e dà il proprio consenso per proseguire oppure lo nega per annullare l'operazione;
 - l’Utente visualizza l'esito positivo della revoca avvenuta.</p>
 <p>Il flusso è rappresentato di seguito con wireframe esemplificativi.</p>
-<figure class="align-default" id="id158">
+<figure class="align-center" id="id163">
 <a class="reference internal image-reference" href="_images/Revoca-EAA-da-wallet.svg"><img alt="Esempio di Esperienza Utente nella Revoca di un Attestato Elettronico" src="_images/Revoca-EAA-da-wallet.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.63 </span><span class="caption-text">Esempio di Esperienza Utente nella Revoca di un Attestato Elettronico.</span><a class="headerlink" href="#id158" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.68 </span><span class="caption-text">Esempio di Esperienza Utente nella Revoca di un Attestato Elettronico</span><a class="headerlink" href="#id163" title="Link to this image">¶</a></p>
+<div class="legend">
+<p>Esempio di Esperienza Utente nella Revoca di un Attestato Elettronico.</p>
+</div>
 </figcaption>
 </figure>
 </section>
@@ -906,10 +1177,10 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 <p>Una volta riattivata l'Istanza del Wallet, gli Attestati Elettronici di Attributi potranno essere ri-ottenuti avviando nuovamente il processo di ottenimento o di ripristino. Per approfondimenti si rimanda rispettivamente alle sezioni <a class="reference internal" href="#ottenimento-degli-attestati-elettronici-di-attributi"><span class="std std-ref">Ottenimento degli Attestati Elettronici di Attributi</span></a> e <a class="reference internal" href="#archiviazione-e-ripristino-degli-attestati-elettronici-di-attributi"><span class="std std-ref">Archiviazione e ripristino degli Attestati Elettronici di Attributi</span></a>.</p>
 <p>In caso di errori nell'utilizzo dell'Istanza del Wallet, il Fornitore di Wallet DEVE garantire all'Utente la visualizzazione di messaggi coerenti che lo informino e guidino alla loro risoluzione. Per approfondimenti si rimanda alla sezione <a class="reference internal" href="#gestione-degli-errori"><span class="std std-ref">Gestione degli errori</span></a>.</p>
 <p>Il flusso è rappresentato di seguito con wireframe esemplificativi.</p>
-<figure class="align-default" id="id160">
+<figure class="align-default" id="id165">
 <a class="reference internal image-reference" href="_images/Disattivazione-wallet.svg"><img alt="Esempio di Esperienza Utente nella Disattivazione di un'Istanza del Wallet" src="_images/Disattivazione-wallet.svg" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 5.65 </span><span class="caption-text">Esempio di Esperienza Utente nella Disattivazione di un'Istanza del Wallet</span><a class="headerlink" href="#id160" title="Link to this image">¶</a></p>
+<p><span class="caption-number">Fig. 5.70 </span><span class="caption-text">Esempio di Esperienza Utente nella Disattivazione di un'Istanza del Wallet</span><a class="headerlink" href="#id165" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -924,7 +1195,7 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 <li><p><strong>l'attore responsabile dell'errore</strong>: Fornitore di Wallet, PID Provider, Fornitore di Attestati Elettronici di Attributi, Fonte Autentica;</p></li>
 <li><p><strong>la modalità di restituzione dell'errore</strong>: messaggio in pagina, banner, toast message, etc.;</p></li>
 <li><p><strong>le azioni suggerite all'Utente per risolvere l'errore</strong>: suggerimento di attesa, richiesta di effettuare un nuovo tentativo, rimando alle domande frequenti e/o al servizio di assistenza, etc.;</p></li>
-<li><p><strong>le modalità di presa in carico dell'errore</strong>: apertura di una richiesta di assistenza tramite l'Istanza del Wallet, rimando ad altri canali di approfondimento, etc. Per approfondimenti si rimanda alla sezione Assistenza Utente.</p></li>
+<li><p><strong>le modalità di presa in carico dell'errore</strong>: apertura di una richiesta di assistenza tramite l'Istanza del Wallet, rimando ad altri canali di approfondimento, etc. Per approfondimenti si rimanda alla sezione <a class="reference internal" href="#assistenza-utente"><span class="std std-ref">Assistenza Utente</span></a>.</p></li>
 </ul>
 <p>Di seguito, una lista non esaustiva delle principali casistiche di errore, con riferimento all'attore responsabile della loro gestione, per ciascuna fase dell'Esperienza Utente. La lista dettagliata degli errori da gestire per ogni endpoint di interazione con l'Utente è disponibile nelle sottosezioni dedicate agli errori all'interno di <a class="reference internal" href="endpoints.html#endpoints"><span class="std std-ref">Endpoints</span></a>.</p>
 <section id="errori-di-attivazione-dell-istanza-del-wallet">
@@ -981,6 +1252,15 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 <tr class="row-even"><td><p>L'Utente non riesce ad ottenere nella propria Istanza del Wallet un certo Attestato Elettronico di Attributi (e.g. assenza di titolarità, versione fisica non valida o scaduta, etc.)</p></td>
 <td><p>Fonte Autentica</p></td>
 </tr>
+<tr class="row-odd"><td><p>Il servizio di ottenimento di un Attestato Elettronico di Attributi non può essere elaborato entro l'intervallo di tempo definito</p></td>
+<td><p>Fornitore di Attestati Elettronici di Attributi</p></td>
+</tr>
+<tr class="row-even"><td><p>Il servizio di ottenimento di un Attestato Elettronico di Attributi non può essere completato in modo sincrono. All'Utente è richiesto di attendere finché l'Attestato non diventa disponibile (flusso differito)</p></td>
+<td><p>Fornitore di Attestati Elettronici di Attributi, Fonte Autentica</p></td>
+</tr>
+<tr class="row-odd"><td><p>Il servizio di ottenimento di un Attestato Elettronico di Attributi non può essere elaborato poiché la richiesta supera il limite consentito (e.g. più Attestati richiesti contemporaneamente)</p></td>
+<td><p>Fornitore di Attestati Elettronici di Attributi</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -1024,6 +1304,9 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 </tr>
 <tr class="row-odd"><td><p>Il servizio di revoca del PID non è disponibile (e.g. errori tecnici)</p></td>
 <td><p>PID Provider</p></td>
+</tr>
+<tr class="row-even"><td><p>Il servizio di cancellazione delle informazioni inviate a una Relying Party non è disponibile (e.g. errori tecnici)</p></td>
+<td><p>Relying Party</p></td>
 </tr>
 </tbody>
 </table>
@@ -1107,19 +1390,78 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 </section>
 
 
-            <div class="clearer"></div>
           </div>
-        </div>
+          <nav class="it-docs-pager d-flex flex-wrap justify-content-between gap-3 mt-5" aria-label="Page navigation">
+            <div class="it-docs-pager-prev">
+              <a class="btn btn-outline-primary" href="onboarding-high-level.html">
+                <svg class="icon icon-sm me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M14.6 17.2 9 11.6 14.6 6l.8.7-4.9 4.9 4.9 4.9z"/>
+</svg>
+                <span>4. Sistema di Onboarding</span>
+              </a>
+            </div>
+            <div class="it-docs-pager-next ms-auto">
+              <a class="btn btn-primary" href="trust-infrastructure.html">
+                <span>6. L&#39;Infrastruttura di Trust</span>
+                <svg class="icon icon-sm ms-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m9.8 17.2-.8-.7 4.9-4.9L9 6.7l.8-.7 5.6 5.6z"/>
+</svg>
+              </a>
+            </div>
+          </nav>
+        </main>
       </div>
-    
-        <div id="show_right_sidebar">
-            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
-        </div>
 
-        <div id="right_sidebar">
-            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
-            <div class="page_toc">
-                <ul>
+      <aside class="col-12 col-lg-3 it-docs-navscroll-col" aria-label="Secondary navigation"><button type="button"
+                class="btn it-docs-navscroll-restore"
+                data-it-docs-navscroll-desktop-toggle
+                aria-controls="itDocsNavscroll"
+                aria-expanded="false"
+                aria-label="Show page contents">
+          <svg class="icon icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M14.6 17.2 9 11.6 14.6 6l.8.7-4.9 4.9 4.9 4.9z"/>
+</svg>
+        </button><div class="it-docs-navscroll-sticky it-docs-menu-scroll"><nav class="navbar it-navscroll-wrapper navbar-expand-lg it-top-navscroll it-left-side it-docs-navscroll"
+     data-bs-navscroll
+     aria-label="Page contents">
+  <button class="custom-navbar-toggler"
+          type="button"
+          data-it-docs-nav-toggle
+          data-it-docs-nav-target="#itDocsNavscroll"
+          aria-controls="itDocsNavscroll"
+          aria-expanded="false"
+          aria-label="Open page contents">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+    <span>Page contents</span>
+  </button>
+  <div class="navbar-collapsable it-docs-navscroll-panel" id="itDocsNavscroll">
+    <div class="overlay"></div>
+    <div class="close-div">
+      <button class="btn close-menu" type="button" aria-label="Close page contents">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m12.7 12 3.7 3.6-.8.8-3.6-3.7-3.6 3.7-.8-.8 3.7-3.6-3.7-3.6.8-.8 3.6 3.7 3.6-3.7.8.8-3.7 3.6z"/>
+</svg>
+      </button>
+    </div>
+    <div class="menu-wrapper it-docs-menu-scroll">
+      <div class="link-list-wrapper">
+        <div class="it-docs-navscroll-heading">
+          <h2 class="it-docs-nav-section-label">On this page</h2>
+          <button type="button"
+                  class="btn it-docs-navscroll-collapse-toggle"
+                  data-it-docs-navscroll-desktop-toggle
+                  aria-controls="itDocsNavscroll"
+                  aria-expanded="true"
+                  aria-label="Hide page contents">
+            <svg class="icon icon-sm" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m9.8 17.2-.8-.7 4.9-4.9L9 6.7l.8-.7 5.6 5.6z"/>
+</svg>
+          </button>
+        </div>
+        <div class="it-docs-local-toc">
+          <ul>
 <li><a class="reference internal" href="#">5. Design dell'Esperienza Utente</a><ul>
 <li><a class="reference internal" href="#principi-di-design">5.1. Principi di Design</a></li>
 <li><a class="reference internal" href="#panoramica-delle-funzionalita">5.2. Panoramica delle Funzionalità</a></li>
@@ -1129,7 +1471,10 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 </li>
 <li><a class="reference internal" href="#ottenimento-degli-attestati-elettronici-di-attributi">5.4. Ottenimento degli Attestati Elettronici di Attributi</a><ul>
 <li><a class="reference internal" href="#ottenimento-dal-catalogo-dell-istanza-del-wallet">5.4.1. Ottenimento dal Catalogo dell'Istanza del Wallet</a></li>
-<li><a class="reference internal" href="#ottenimento-dal-touchpoint-della-fonte-autentica">5.4.2. Ottenimento dal Touchpoint della Fonte Autentica</a></li>
+<li><a class="reference internal" href="#ottenimento-dal-touchpoint-della-fonte-autentica">5.4.2. Ottenimento dal Touchpoint della Fonte Autentica</a><ul>
+<li><a class="reference internal" href="#engagement-button">5.4.2.1. Engagement Button</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#focus-sugli-attestati-elettronici-di-attributi">5.4.3. Focus sugli Attestati Elettronici di Attributi</a></li>
 </ul>
 </li>
@@ -1168,35 +1513,52 @@ Per approfondimenti sull'Authentication button consultare il Brand Manual, indic
 </li>
 </ul>
 
-            </div>
         </div>
-    
-
-      <div class="clearer"></div>
+      </div>
     </div>
-    <div class="button_nav_wrapper">
-        <div class="button_nav">
-            <div class="left">
-                
-                <a href="onboarding-high-level.html">
-                    <span class="icon">&lt;</span><span><span class="section-number">4. </span>Sistema di Onboarding</span></a>
-                
-            </div>
-
-            <div class="right">
-                
-                    <a href="trust-infrastructure.html"><span><span class="section-number">6. </span>L'Infrastruttura di Trust</span><span class="icon">&gt;</span></a>
-                
-            </div>
+  </div>
+</nav>
         </div>
+      </aside>
     </div>
-
-
-    <div class="footer" role="contentinfo">
-      Ultimo aggiornamento 06/05/2026.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.5.
+  </div>
+</div>
+<footer id="page-footer" class="it-docs-footer" role="contentinfo" tabindex="-1">
+  <div class="container">
+    <div class="it-docs-footer-inner"><nav id="footer-partners-nav"
+     class="it-docs-footer-partners"
+     aria-label="Institutional partners">
+  <ul class="it-docs-footer-partners-list">
+    <li>
+      <a href="https://innovazione.gov.it/"
+         class="it-docs-footer-partner-link it-docs-footer-partner-link--dtd"
+         target="_blank"
+         rel="noopener">
+        <img src="_static/img/footer/logo-dtd.svg"
+             alt="Department for Digital Transformation"
+             width="120"
+             height="32"
+             loading="lazy"
+             decoding="async">
+      </a>
+    </li>
+  </ul>
+</nav><div class="it-docs-footer-meta">
+        <p class="it-docs-footer-details"><span class="it-docs-footer-detail">Version 1.4.5</span><span class="it-docs-footer-detail">Last updated 04/08/2026</span><span class="it-docs-footer-detail">
+            Sphinx 7.4.5
+          </span></p>
+      </div>
     </div>
-
-<p id="theme_credit"></p>
+  </div>
+</footer><a href="#"
+   class="back-to-top shadow it-docs-back-to-top"
+   data-bs-toggle="backtotop"
+   data-bs-scroll-limit="100"
+   data-bs-position-top="0"
+   aria-label="Torna su">
+  <svg class="icon it-docs-back-to-top-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M18.6 10.1 12 3.5l-6.6 6.6.7.7 5.4-5.3V21h1V5.5l5.4 5.3.7-.7z"/>
+</svg>
+</a>
   </body>
 </html>
